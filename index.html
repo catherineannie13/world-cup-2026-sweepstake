@@ -99,7 +99,7 @@
   <header class="top">
     <div class="ttl">
       <h1>🏆 World Cup 2026 — Sweepstake Tracker</h1>
-      <p>8 players · 6 teams each · 🏆 winner owns the champion · <a href="draw.html" style="color:var(--gold);font-weight:700">🎬 replay the draw</a></p>
+      <p>8 players · 6 teams each · 🏆 winner owns the champion</p>
     </div>
     <div class="status">
       <span class="dot" id="dot"></span><span id="updated">Loading…</span>
@@ -379,7 +379,12 @@ function renderBanner(M){
   b.innerHTML = `🏆 Winner owns the champion · <b>${inHunt.length}</b> of 8 still in the hunt`+(lead?` · furthest team: <b>${lead}</b>`:'');
 }
 
-function medal(i){ return i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1); }
+// competition ranking: tied players (same sort key) share a rank → 1,1,1,4,…
+function rankKey(p){ return [p.hasChampion?1:0,p.bestAliveRank,p.alive,p.bestReachedRank,p.pts,p.GF].join('|'); }
+function computeRanks(players){
+  return players.map((p,i)=> (i>0 && rankKey(p)===rankKey(players[i-1])) ? null : i+1)
+    .reduce((acc,r,i)=>{ acc[i]= r===null?acc[i-1]:r; return acc; },[]);
+}
 const SHORT={"Group":"Group","Round of 32":"R32","Round of 16":"R16","Quarter-final":"QF","Semi-final":"SF","3rd Place":"3rd","Final":"Final","Champion":"Champion"};
 function statusCell(p){
   if(p.hasChampion) return '<span class="badge b-champ">🏆 Won</span>';
@@ -394,9 +399,16 @@ function bestRunCell(p){
   return `<span${dim}>${FLAG[s.team]} ${s.team} <span class="muted" style="font-size:11px">· ${lbl}</span></span>`;
 }
 function renderLeaderboard(M){
+  const ranks=computeRanks(M.players);
+  const count={}; ranks.forEach(r=>count[r]=(count[r]||0)+1);
+  const rankCell=i=>{
+    const r=ranks[i];
+    if(count[r]===1 && r<=3) return `<span class="medal">${r===1?'🥇':r===2?'🥈':'🥉'}</span>`;
+    return `<span class="medal" style="font-size:17px">${r}</span>`;
+  };
   document.getElementById('lbBody').innerHTML = M.players.map((p,i)=>`
-    <tr class="${i===0&&M.anyFinished?'top':''}">
-      <td class="rank"><span class="medal">${medal(i)}</span></td>
+    <tr class="${ranks[i]===1 && count[1]===1 ? 'top':''}">
+      <td class="rank">${rankCell(i)}</td>
       <td class="l pl-name">${p.name}</td>
       <td>${statusCell(p)}</td>
       <td class="l">${bestRunCell(p)}</td>
