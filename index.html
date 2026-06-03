@@ -421,15 +421,21 @@ function renderLeaderboard(M){
 function renderStats(M){
   const teams=Object.values(M.T);
   const cards=[];
-  // top scoring player
-  const topGoals=[...M.players].sort((a,b)=>b.GF-a.GF)[0];
-  cards.push(['⚽ Most goals scored', `${topGoals.name}`, `${topGoals.GF} goals across their teams`]);
-  // most teams alive
-  const topAlive=[...M.players].sort((a,b)=>b.alive-a.alive||b.pts-a.pts)[0];
-  cards.push(['💪 Most teams alive', `${topAlive.name}`, `${topAlive.alive} of 6 still in it`]);
-  // star nation
-  const starT=[...teams].sort((a,b)=>(b.pts+b.koBonus)-(a.pts+a.koBonus)||b.GF-a.GF)[0];
-  cards.push(['⭐ Star nation', `${FLAG[starT.team]} ${starT.team}`, `${starT.pts+starT.koBonus} pts · owned by ${starT.owner}`]);
+  // most goals scored — only name a leader once someone's actually scored
+  const maxGF=Math.max(...M.players.map(p=>p.GF));
+  if(maxGF===0){ cards.push(['⚽ Most goals scored', '—', 'no goals yet']); }
+  else { const ld=M.players.filter(p=>p.GF===maxGF);
+    cards.push(['⚽ Most goals scored', ld.length>1?`${ld.length}-way tie`:ld[0].name, `${maxGF} goal${maxGF!==1?'s':''}${ld.length>1?' each':''}`]); }
+  // most teams alive — show a leader only when someone has fewer than the rest
+  const maxAlive=Math.max(...M.players.map(p=>p.alive)), minAlive=Math.min(...M.players.map(p=>p.alive));
+  if(maxAlive===minAlive){ cards.push(['💪 Teams still alive', `Everyone · ${maxAlive}/6`, 'nobody knocked out yet']); }
+  else { const ld=M.players.filter(p=>p.alive===maxAlive);
+    cards.push(['💪 Most teams alive', ld.length>1?`${ld.length} players · ${maxAlive}/6`:ld[0].name, `${maxAlive} of 6 still in it`]); }
+  // star nation — only once a team has earned something
+  const tScore=s=>s.pts+s.koBonus, maxTS=Math.max(...teams.map(tScore));
+  if(maxTS===0){ cards.push(['⭐ Star nation', '—', 'crowned once games begin']); }
+  else { const starT=[...teams].sort((a,b)=>tScore(b)-tScore(a)||b.GF-a.GF)[0];
+    cards.push(['⭐ Star nation', `${FLAG[starT.team]} ${starT.team}`, `${tScore(starT)} pts · owned by ${starT.owner}`]); }
   // biggest win (roster team involved)
   let big=null;
   M.events.filter(isFinished).forEach(ev=>{
