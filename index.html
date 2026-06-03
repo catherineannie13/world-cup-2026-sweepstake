@@ -99,7 +99,7 @@
   <header class="top">
     <div class="ttl">
       <h1>🏆 World Cup 2026 — Sweepstake Tracker</h1>
-      <p>8 players · 6 teams each · live from TheSportsDB · <a href="draw.html" style="color:var(--gold);font-weight:700">🎬 replay the draw</a></p>
+      <p>8 players · 6 teams each · 🏆 winner owns the champion · <a href="draw.html" style="color:var(--gold);font-weight:700">🎬 replay the draw</a></p>
     </div>
     <div class="status">
       <span class="dot" id="dot"></span><span id="updated">Loading…</span>
@@ -110,12 +110,11 @@
   <div class="banner" id="banner">Loading live data…</div>
 
   <section>
-    <h2 class="sec">🥇 Leaderboard</h2>
+    <h2 class="sec">🏆 The Race for the Trophy</h2>
     <table class="lb">
       <thead><tr>
-        <th>#</th><th class="l">Player</th><th>Points</th>
-        <th>Alive</th><th class="hide">Played</th><th class="hide">W-D-L</th>
-        <th>Goals</th><th class="hide">GD</th>
+        <th>#</th><th class="l">Player</th><th>Status</th><th class="l">Best run</th>
+        <th>Alive</th><th class="hide">Pts</th><th class="hide">Goals</th>
       </tr></thead>
       <tbody id="lbBody"></tbody>
     </table>
@@ -159,6 +158,11 @@ const URL = `https://www.thesportsdb.com/api/v1/json/${API_KEY}/eventsseason.php
 const KICKOFF = new Date("2026-06-11T19:00:00");
 const REFRESH_MS = 90000;
 
+// Safety net: if the FINAL is decided on penalties, the API stores only the level
+// 90/120-min score and can't tell us who won. Set this to the winning team name
+// (e.g. "Spain") to crown the champion manually. Leave "" the rest of the time.
+const MANUAL_CHAMPION = "";
+
 /* ============================================================
    ROSTERS (as drawn) + flags
    ============================================================ */
@@ -181,6 +185,22 @@ const ROSTERS = {
   "Carol":["England","Morocco","Austria","Ivory Coast","Saudi Arabia","DR Congo"],
   "Cheryl":["Portugal","Uruguay","Senegal","Panama","South Africa","Czechia"],
   "Tony":["Spain","Croatia","South Korea","Algeria","Uzbekistan","Iraq"]
+};
+
+/* Official group draw (5 Dec 2025): canonical team -> group letter */
+const GROUPS = {
+  "Mexico":"A","South Africa":"A","South Korea":"A","Czechia":"A",
+  "Canada":"B","Bosnia & Herzegovina":"B","Qatar":"B","Switzerland":"B",
+  "Brazil":"C","Morocco":"C","Haiti":"C","Scotland":"C",
+  "United States":"D","Paraguay":"D","Australia":"D","Turkey":"D",
+  "Germany":"E","Curaçao":"E","Ivory Coast":"E","Ecuador":"E",
+  "Netherlands":"F","Japan":"F","Sweden":"F","Tunisia":"F",
+  "Belgium":"G","Egypt":"G","Iran":"G","New Zealand":"G",
+  "Spain":"H","Cape Verde":"H","Saudi Arabia":"H","Uruguay":"H",
+  "France":"I","Senegal":"I","Iraq":"I","Norway":"I",
+  "Argentina":"J","Algeria":"J","Austria":"J","Jordan":"J",
+  "Portugal":"K","DR Congo":"K","Uzbekistan":"K","Colombia":"K",
+  "England":"L","Croatia":"L","Ghana":"L","Panama":"L"
 };
 
 /* Map an API team name to our canonical roster name */
@@ -270,40 +290,60 @@ function process(events){
   const teamsInKO = new Set();
   events.forEach(ev=>{ if(+ev.intRound>3){ [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>t&&teamsInKO.add(t)); } });
 
-  // walk finished games
+  const STAGE_RANK={"Group":1,"Round of 32":2,"Round of 16":3,"Quarter-final":4,"Semi-final":5,"3rd Place":5,"Final":6,"Champion":7};
+  const stageOfRound = r => r>3 ? (roundMeta[r]?roundMeta[r].name:"Knockout") : "Group";
+
+  // furthest stage each team APPEARS in (scheduled or played) = its current / deepest stage
+  events.forEach(ev=>{
+    const st=stageOfRound(+ev.intRound), rank=STAGE_RANK[st]||1;
+    [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>{
+      if(t&&T[t]&&rank>(T[t].stageRank||0)){ T[t].stage=st; T[t].stageRank=rank; }
+    });
+  });
+  Object.values(T).forEach(s=>{ if(!s.stageRank){ s.stage="Group"; s.stageRank=1; } });
+
+  // walk finished games: records, advancement bonus, eliminations, champion
   events.slice().sort((a,b)=>new Date(a.strTimestamp||a.dateEvent)-new Date(b.strTimestamp||b.dateEvent)).forEach(ev=>{
     if(!isFinished(ev)) return;
     const h=resolve(ev.strHomeTeam), a=resolve(ev.strAwayTeam);
     const hs=+ev.intHomeScore, as=+ev.intAwayScore;
-    const r=+ev.intRound, ko=r>3, meta=roundMeta[r];
-    [[h,hs,as,a],[a,as,hs,h]].forEach(([t,gf,ga])=>{
+    const r=+ev.intRound, ko=r>3, meta=roundMeta[r], isFinal=meta&&meta.name==="Final";
+    [[h,hs,as,a],[a,as,hs,h]].forEach(([t,gf,ga,opp])=>{
       if(!t||!T[t]) return;
       const s=T[t]; s.P++; s.GF+=gf; s.GA+=ga;
-      if(gf>ga){ s.W++; s.pts+=3; if(ko&&meta){ s.koBonus+=meta.advanceBonus; s.stage=meta.name; if(meta.name==="Final") s.champion=true; } }
-      else if(gf===ga){ s.D++; s.pts+=1; if(ko) s.eliminated=true; /* draw in KO ~ lost on pens (data has no pen score) */ }
-      else { s.L++; if(ko){ s.eliminated=true; } }
-      s.lastResult={gf,ga,opp:( (t===h)?a:h ),round:meta?meta.name:("Group · MD"+r),date:ev.dateEvent,won:gf>ga,draw:gf===ga};
-      if(ko && !s.eliminated && meta) s.stage=meta.name;
+      if(gf>ga){ s.W++; s.pts+=3; if(ko&&meta){ s.koBonus+=meta.advanceBonus; if(isFinal) s.champion=true; } }
+      else if(gf===ga){ s.D++; s.pts+=1; if(ko && !isFinal) s.eliminated=true; /* KO draw = lost on pens; final via MANUAL_CHAMPION */ }
+      else { s.L++; if(ko) s.eliminated=true; }
+      s.lastResult={gf,ga,opp,round:meta?meta.name:("Group · MD"+r),date:ev.dateEvent,won:gf>ga,draw:gf===ga};
     });
   });
 
+  // manual champion override (final won on penalties — API can't tell us)
+  if(MANUAL_CHAMPION && T[MANUAL_CHAMPION]){ Object.values(T).forEach(s=>{s.champion=false}); T[MANUAL_CHAMPION].champion=true; T[MANUAL_CHAMPION].eliminated=false; }
+
   // alive / eliminated resolution
   Object.values(T).forEach(s=>{
-    if(s.champion){ s.alive=true; s.stage="Final"; return; }
+    if(s.champion){ s.alive=true; s.eliminated=false; s.stage="Champion"; s.stageRank=STAGE_RANK.Champion; return; }
     if(s.eliminated){ s.alive=false; return; }
-    if(teamsInKO.size>0){ // bracket exists -> only KO teams survive group stage
-      if(!teamsInKO.has(s.team)){ s.alive=false; s.eliminated=true; if(s.stage==="Group") s.stage="Group"; }
-    }
+    if(teamsInKO.size>0 && !teamsInKO.has(s.team)){ s.alive=false; s.eliminated=true; } // didn't make the bracket
   });
 
-  // players
+  // players — sorted by who's CLOSEST to owning the champion
   const players = Object.keys(ROSTERS).map(name=>{
     const teams = ROSTERS[name].map(t=>T[t]);
     const agg = teams.reduce((o,s)=>{o.pts+=s.pts+s.koBonus;o.P+=s.P;o.W+=s.W;o.D+=s.D;o.L+=s.L;o.GF+=s.GF;o.GA+=s.GA;o.alive+=s.alive?1:0;return o;},
       {pts:0,P:0,W:0,D:0,L:0,GF:0,GA:0,alive:0});
     agg.name=name; agg.teams=teams; agg.GD=agg.GF-agg.GA;
+    agg.hasChampion = teams.some(s=>s.champion);
+    const aliveTeams = teams.filter(s=>s.alive);
+    agg.best = (aliveTeams.length?aliveTeams:teams).slice().sort((x,y)=>y.stageRank-x.stageRank)[0];
+    agg.bestAliveRank = aliveTeams.reduce((m,s)=>Math.max(m,s.stageRank),0);
+    agg.bestReachedRank = teams.reduce((m,s)=>Math.max(m,s.stageRank),0);
     return agg;
-  }).sort((a,b)=> b.pts-a.pts || b.GD-a.GD || b.GF-a.GF || b.alive-a.alive);
+  }).sort((a,b)=>
+    (b.hasChampion-a.hasChampion) || (b.bestAliveRank-a.bestAliveRank) ||
+    (b.alive-a.alive) || (b.bestReachedRank-a.bestReachedRank) ||
+    (b.pts-a.pts) || (b.GF-a.GF));
 
   return {T,players,events,roundMeta,anyFinished:events.some(isFinished)};
 }
@@ -319,36 +359,50 @@ function render(events){
   renderPlayers(M);
   renderFixtures(M);
   document.getElementById('foot').innerHTML =
-    `Data: TheSportsDB · league <code>${LEAGUE_ID}</code> season <code>${SEASON}</code> · auto-refreshes every ${REFRESH_MS/1000}s.<br>`+
-    `Scoring: <b>3</b> per win, <b>1</b> per draw (all matches) + knockout bonus for advancing — R32 +4, R16 +6, QF +9, SF +13, Champion +20.`;
+    `🏆 <b>Winner = whoever owns the team that wins the World Cup.</b> Points &amp; stats are just for bragging rights.<br>`+
+    `Data: TheSportsDB · league <code>${LEAGUE_ID}</code> season <code>${SEASON}</code> · auto-refreshes every ${REFRESH_MS/1000}s · points: 3/win, 1/draw + KO bonus.`;
 }
 
 function renderBanner(M){
   const b=document.getElementById('banner');
   const now=new Date();
+  const champ=Object.values(M.T).find(s=>s.champion);
+  if(champ){ b.innerHTML = `🏆 <b>${champ.team} are World Champions!</b> ${FLAG[champ.team]} — congratulations <b>${champ.owner}</b>, you've won the sweepstake! 🎉`; return; }
   if(!M.anyFinished && now<KICKOFF){
     const days=Math.ceil((KICKOFF-now)/86400000);
-    b.innerHTML = `⚽ Tournament kicks off in <b>${days} day${days!==1?'s':''}</b> — first match <b>Mexico vs South Africa</b>, 11 June. Squads &amp; fixtures below; points start flowing once the games begin!`;
-  }else{
-    const lead=M.players[0];
-    const champ=Object.values(M.T).find(s=>s.champion);
-    if(champ){ b.innerHTML = `🏆 <b>${champ.team} are World Champions!</b> ${FLAG[champ.team]} — congratulations <b>${champ.owner}</b>!`; }
-    else b.innerHTML = `🔥 <b>${lead.name}</b> leads with <b>${lead.pts}</b> pts · ${lead.alive} team${lead.alive!==1?'s':''} still standing`;
+    b.innerHTML = `⚽ Kicks off in <b>${days} day${days!==1?'s':''}</b> (Mexico v South Africa, 11 Jun). 🏆 <b>The winner is whoever owns the team that lifts the trophy</b> — the points &amp; stats below are just for bragging rights!`;
+    return;
   }
+  const inHunt=M.players.filter(p=>p.alive>0);
+  const deepest=[...M.players].sort((a,b)=>b.bestAliveRank-a.bestAliveRank)[0];
+  const lead=(deepest&&deepest.best&&deepest.best.alive)?`${FLAG[deepest.best.team]} ${deepest.best.team} (${deepest.name})`:'';
+  b.innerHTML = `🏆 Winner owns the champion · <b>${inHunt.length}</b> of 8 still in the hunt`+(lead?` · furthest team: <b>${lead}</b>`:'');
 }
 
 function medal(i){ return i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1); }
+const SHORT={"Group":"Group","Round of 32":"R32","Round of 16":"R16","Quarter-final":"QF","Semi-final":"SF","3rd Place":"3rd","Final":"Final","Champion":"Champion"};
+function statusCell(p){
+  if(p.hasChampion) return '<span class="badge b-champ">🏆 Won</span>';
+  if(p.alive===0)   return '<span class="badge b-out">Out</span>';
+  return '<span class="badge b-grp">In the hunt</span>';
+}
+function bestRunCell(p){
+  const s=p.best; if(!s) return '<span class="muted">—</span>';
+  if(s.champion) return `${FLAG[s.team]} ${s.team} <span class="muted" style="font-size:11px">· 🏆 Champion</span>`;
+  const lbl = s.stage==="Group" ? "Group "+(GROUPS[s.team]||'?') : (SHORT[s.stage]||s.stage);
+  const dim = s.alive?'':' style="opacity:.55"';
+  return `<span${dim}>${FLAG[s.team]} ${s.team} <span class="muted" style="font-size:11px">· ${lbl}</span></span>`;
+}
 function renderLeaderboard(M){
   document.getElementById('lbBody').innerHTML = M.players.map((p,i)=>`
-    <tr class="${i===0?'top':''}">
+    <tr class="${i===0&&M.anyFinished?'top':''}">
       <td class="rank"><span class="medal">${medal(i)}</span></td>
       <td class="l pl-name">${p.name}</td>
-      <td><span class="pts">${p.pts}</span></td>
+      <td>${statusCell(p)}</td>
+      <td class="l">${bestRunCell(p)}</td>
       <td><span class="alive-pill ${p.alive===0?'zero':''}">${p.alive}/6</span></td>
-      <td class="hide">${p.P}</td>
-      <td class="hide muted">${p.W}-${p.D}-${p.L}</td>
-      <td>${p.GF}<span class="muted" style="font-size:11px">:${p.GA}</span></td>
-      <td class="hide ${p.GD>0?'win':p.GD<0?'':''}">${p.GD>0?'+':''}${p.GD}</td>
+      <td class="hide"><span class="pts" style="font-size:15px">${p.pts}</span></td>
+      <td class="hide">${p.GF}<span class="muted" style="font-size:11px">:${p.GA}</span></td>
     </tr>`).join('');
 }
 
@@ -374,11 +428,10 @@ function renderStats(M){
   if(big){ const e=big.ev;
     cards.push(['💥 Biggest win', `${e.strHomeTeam} ${e.intHomeScore}–${e.intAwayScore} ${e.strAwayTeam}`, `margin of ${big.m}`]);
   } else cards.push(['💥 Biggest win', '—', 'no matches played yet']);
-  // tightest race / runner-up gap
-  if(M.players.length>1){
-    const gap=M.players[0].pts-M.players[1].pts;
-    cards.push(['🏁 Lead margin', `${gap} pt${gap!==1?'s':''}`, `${M.players[0].name} over ${M.players[1].name}`]);
-  }
+  // trophy watch — players still in contention
+  const inHunt=M.players.filter(p=>p.alive>0);
+  if(inHunt.length===1){ cards.push(['🏆 One win away', `${inHunt[0].name}`, `the only player still in it!`]); }
+  else cards.push(['🏆 Still in the hunt', `${inHunt.length} / 8`, `players with a team still alive`]);
   // next all-roster clash
   const clash=upcomingList(M).find(f=>f.h&&f.a);
   if(clash){ cards.push(['⚔️ Rival clash incoming', `${clash.ev.strHomeTeam} vs ${clash.ev.strAwayTeam}`, `${OWNER[clash.h]} vs ${OWNER[clash.a]} · ${fmtDate(clash.ev)}`]); }
@@ -392,7 +445,7 @@ function teamBadge(s){
   if(s.champion) return '<span class="badge b-champ">🏆 Champion</span>';
   if(s.eliminated) return '<span class="badge b-out">Out</span>';
   if(s.stage && s.stage!=="Group") return `<span class="badge b-ko">${s.stage.replace('Round of','R')}</span>`;
-  return '<span class="badge b-grp">Group</span>';
+  return `<span class="badge b-grp">Group ${GROUPS[s.team]||'?'}</span>`;
 }
 function renderPlayers(M){
   document.getElementById('players').innerHTML = M.players.map(p=>`
