@@ -112,10 +112,7 @@
   <section>
     <h2 class="sec">🏆 The Race for the Trophy</h2>
     <table class="lb">
-      <thead><tr>
-        <th>#</th><th class="l">Player</th><th>Status</th><th class="l">Best run</th>
-        <th>Alive</th><th class="hide">Pts</th><th class="hide">Goals</th>
-      </tr></thead>
+      <thead id="lbHead"></thead>
       <tbody id="lbBody"></tbody>
     </table>
   </section>
@@ -345,7 +342,7 @@ function process(events){
     (b.alive-a.alive) || (b.bestReachedRank-a.bestReachedRank) ||
     (b.pts-a.pts) || (b.GF-a.GF));
 
-  return {T,players,events,roundMeta,anyFinished:events.some(isFinished)};
+  return {T,players,events,roundMeta,anyFinished:events.some(isFinished),knockoutsStarted:teamsInKO.size>0};
 }
 
 /* ============================================================
@@ -375,7 +372,7 @@ function renderBanner(M){
   }
   const inHunt=M.players.filter(p=>p.alive>0);
   const deepest=[...M.players].sort((a,b)=>b.bestAliveRank-a.bestAliveRank)[0];
-  const lead=(deepest&&deepest.best&&deepest.best.alive)?`${FLAG[deepest.best.team]} ${deepest.best.team} (${deepest.name})`:'';
+  const lead=(M.knockoutsStarted&&deepest&&deepest.best&&deepest.best.alive)?`${FLAG[deepest.best.team]} ${deepest.best.team} (${deepest.name})`:'';
   b.innerHTML = `🏆 Winner owns the champion · <b>${inHunt.length}</b> of 8 still in the hunt`+(lead?` · furthest team: <b>${lead}</b>`:'');
 }
 
@@ -406,12 +403,18 @@ function renderLeaderboard(M){
     if(count[r]===1 && r<=3) return `<span class="medal">${r===1?'🥇':r===2?'🥈':'🥉'}</span>`;
     return `<span class="medal" style="font-size:17px">${r}</span>`;
   };
+  const ko=M.knockoutsStarted; // only show "Furthest team" once the knockouts begin
+  document.getElementById('lbHead').innerHTML = `<tr>
+    <th>#</th><th class="l">Player</th><th>Status</th>
+    ${ko?'<th class="l">Furthest team</th>':''}
+    <th>Alive</th><th class="hide">Pts</th><th class="hide">Goals</th>
+  </tr>`;
   document.getElementById('lbBody').innerHTML = M.players.map((p,i)=>`
     <tr class="${ranks[i]===1 && count[1]===1 ? 'top':''}">
       <td class="rank">${rankCell(i)}</td>
       <td class="l pl-name">${p.name}</td>
       <td>${statusCell(p)}</td>
-      <td class="l">${bestRunCell(p)}</td>
+      ${ko?`<td class="l">${bestRunCell(p)}</td>`:''}
       <td><span class="alive-pill ${p.alive===0?'zero':''}">${p.alive}/6</span></td>
       <td class="hide"><span class="pts" style="font-size:15px">${p.pts}</span></td>
       <td class="hide">${p.GF}<span class="muted" style="font-size:11px">:${p.GA}</span></td>
