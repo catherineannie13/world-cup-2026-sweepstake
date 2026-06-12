@@ -90,8 +90,18 @@
 
   footer{margin-top:30px;color:var(--muted);font-size:11px;text-align:center;line-height:1.7}
   footer code{background:rgba(0,0,0,.3);padding:1px 5px;border-radius:4px}
-  @media(max-width:860px){.players{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr}.fxgrid{grid-template-columns:1fr}
-    .lb .hide{display:none}}
+  .lb-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .mini{display:none}
+  @media(max-width:860px){.players{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr}.fxgrid{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .lb th,.lb td{padding:11px 5px;font-size:13px}
+    .lb td:first-child{border-radius:10px 0 0 10px}
+    .lb td:last-child{border-radius:0 10px 10px 0}
+    .rank{width:30px}
+    .pl-name{font-size:14px}
+    .full{display:none}
+    .mini{display:inline}
+  }
 </style>
 </head>
 <body>
@@ -111,10 +121,12 @@
 
   <section>
     <h2 class="sec">🏆 The Race for the Trophy</h2>
+    <div class="lb-wrap">
     <table class="lb">
       <thead id="lbHead"></thead>
       <tbody id="lbBody"></tbody>
     </table>
+    </div>
   </section>
 
   <section>
@@ -384,9 +396,9 @@ function computeRanks(players){
 }
 const SHORT={"Group":"Group","Round of 32":"R32","Round of 16":"R16","Quarter-final":"QF","Semi-final":"SF","3rd Place":"3rd","Final":"Final","Champion":"Champion"};
 function statusCell(p){
-  if(p.hasChampion) return '<span class="badge b-champ">🏆 Won</span>';
-  if(p.alive===0)   return '<span class="badge b-out">Out</span>';
-  return '<span class="badge b-grp">In the hunt</span>';
+  if(p.hasChampion) return '<span class="badge b-champ"><span class="full">🏆 Won</span><span class="mini">🏆</span></span>';
+  if(p.alive===0)   return '<span class="badge b-out"><span class="full">Out</span><span class="mini">❌</span></span>';
+  return '<span class="badge b-grp"><span class="full">In the hunt</span><span class="mini">🟢</span></span>';
 }
 function bestRunCell(p){
   const s=p.best; if(!s) return '<span class="muted">—</span>';
