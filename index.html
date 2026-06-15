@@ -160,7 +160,7 @@
 /* ============================================================
    CONFIG
    ============================================================ */
-const API_KEY = "3";                 // free public test key. Swap for a Patreon key for higher rate limits.
+const API_KEY = "123";               // free key — returns full data. ("3" is a throttled legacy key capped at ~5 events.)
 const LEAGUE_ID = 4429;              // FIFA World Cup
 const SEASON = "2026";
 const URL = `https://www.thesportsdb.com/api/v1/json/${API_KEY}/eventsseason.php?id=${LEAGUE_ID}&s=${SEASON}`;
@@ -219,7 +219,7 @@ Object.keys(FLAG).forEach(c => CANON[norm(c)] = c);
 [ // aliases: api spelling -> canonical
   ["usa","United States"],["unitedstatesofamerica","United States"],
   ["czechrepublic","Czechia"],
-  ["bosnia","Bosnia & Herzegovina"],["bosniaandherzegovina","Bosnia & Herzegovina"],
+  ["bosnia","Bosnia & Herzegovina"],["bosniaandherzegovina","Bosnia & Herzegovina"],["bosniaherzegovina","Bosnia & Herzegovina"],
   ["congodr","DR Congo"],["democraticrepublicofcongo","DR Congo"],["congodemocraticrepublic","DR Congo"],["drcongo","DR Congo"],
   ["cotedivoire","Ivory Coast"],
   ["turkiye","Turkey"],
@@ -234,8 +234,12 @@ Object.entries(ROSTERS).forEach(([p,ts]) => ts.forEach(t => OWNER[t] = p));
 /* ============================================================
    FETCH + PROCESS
    ============================================================ */
-let lastGood = null;
-try { lastGood = JSON.parse(localStorage.getItem("wc26cache")||"null"); } catch(e){}
+// We MERGE every response into a map keyed by event id, so a throttled/partial
+// response (the API sometimes returns only a few rows) can never wipe matches we've
+// already seen — fixtures persist and scores just update in place. Knockout matches
+// are added automatically as they appear in the feed.
+let eventMap = {}, lastAt = 0;
+try { const c=JSON.parse(localStorage.getItem("wc26cache")||"null"); if(c&&c.map){ eventMap=c.map; lastAt=c.at||0; } } catch(e){}
 
 async function load(){
   setStatus(false, "Updating…");
@@ -245,14 +249,16 @@ async function load(){
     const data = await res.json();
     const events = (data && data.events) || [];
     if(!events.length) throw new Error("no events");
-    lastGood = {events, at:Date.now()};
-    try{ localStorage.setItem("wc26cache", JSON.stringify(lastGood)); }catch(e){}
-    render(events);
-    setStatus(true, "Updated "+timeAgo(lastGood.at));
+    events.forEach(e=>{ if(e && e.idEvent) eventMap[e.idEvent]=e; });
+    lastAt = Date.now();
+    try{ localStorage.setItem("wc26cache", JSON.stringify({map:eventMap, at:lastAt})); }catch(e){}
+    render(Object.values(eventMap));
+    setStatus(true, "Updated "+timeAgo(lastAt));
   }catch(err){
-    if(lastGood){
-      render(lastGood.events);
-      setStatus(false, "Offline — showing cached ("+timeAgo(lastGood.at)+")");
+    const cached = Object.values(eventMap);
+    if(cached.length){
+      render(cached);
+      setStatus(false, "Offline — showing cached ("+timeAgo(lastAt)+")");
     }else{
       document.getElementById('banner').innerHTML =
         "⚠️ Couldn't reach the football API and no cached data yet.<br>"+
