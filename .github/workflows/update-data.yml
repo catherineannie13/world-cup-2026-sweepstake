@@ -1,0 +1,40 @@
+name: Update World Cup data
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:          # allow manual "Run workflow" button
+  push:
+    paths:                    # re-run when the fetch logic changes (NOT on data commits)
+      - "scripts/fetch-data.py"
+      - ".github/workflows/update-data.yml"
+
+# let the workflow commit the refreshed data file back to the repo
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest data
+        run: python3 scripts/fetch-data.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "wc-data-bot"
+          git config user.email "actions@github.com"
+          if [[ -n "$(git status --porcelain data/wc.json)" ]]; then
+            git add data/wc.json
+            git commit -m "data: refresh World Cup results [skip ci]"
+            git push
+            echo "✅ data updated"
+          else
+            echo "no change"
+          fi

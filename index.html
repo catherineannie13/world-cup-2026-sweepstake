@@ -163,9 +163,12 @@
 const API_KEY = "123";               // free key — returns full data. ("3" is a throttled legacy key capped at ~5 events.)
 const LEAGUE_ID = 4429;              // FIFA World Cup
 const SEASON = "2026";
-const URL = `https://www.thesportsdb.com/api/v1/json/${API_KEY}/eventsseason.php?id=${LEAGUE_ID}&s=${SEASON}`;
+// The page reads a static data file that a GitHub Action refreshes ~every 30 min.
+// This means viewers make ZERO calls to the football API, so the free key never
+// gets rate-limited no matter how many family members open the page.
+const DATA_URL = "data/wc.json";
 const KICKOFF = new Date("2026-06-11T19:00:00");
-const REFRESH_MS = 90000;
+const REFRESH_MS = 120000;
 
 // Safety net: if the FINAL is decided on penalties, the API stores only the level
 // 90/120-min score and can't tell us who won. Set this to the winning team name
@@ -244,13 +247,13 @@ try { const c=JSON.parse(localStorage.getItem("wc26cache")||"null"); if(c&&c.map
 async function load(){
   setStatus(false, "Updating…");
   try{
-    const res = await fetch(URL, {cache:"no-store"});
+    const res = await fetch(DATA_URL + "?_=" + Date.now(), {cache:"no-store"});
     if(!res.ok) throw new Error("HTTP "+res.status);
     const data = await res.json();
     const events = (data && data.events) || [];
     if(!events.length) throw new Error("no events");
     events.forEach(e=>{ if(e && e.idEvent) eventMap[e.idEvent]=e; });
-    lastAt = Date.now();
+    lastAt = data.updated ? Date.parse(data.updated) : Date.now();
     try{ localStorage.setItem("wc26cache", JSON.stringify({map:eventMap, at:lastAt})); }catch(e){}
     render(Object.values(eventMap));
     setStatus(true, "Updated "+timeAgo(lastAt));
@@ -375,7 +378,7 @@ function render(events){
   renderFixtures(M);
   document.getElementById('foot').innerHTML =
     `🏆 <b>Winner = whoever owns the team that wins the World Cup.</b> Points &amp; stats are just for bragging rights.<br>`+
-    `Data: TheSportsDB · league <code>${LEAGUE_ID}</code> season <code>${SEASON}</code> · auto-refreshes every ${REFRESH_MS/1000}s · points: 3/win, 1/draw + KO bonus.`;
+    `Data: TheSportsDB (refreshed ~every 30 min) · league <code>${LEAGUE_ID}</code> season <code>${SEASON}</code> · points: 3/win, 1/draw + KO bonus.`;
 }
 
 function renderBanner(M){
