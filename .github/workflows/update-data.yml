@@ -33,8 +33,11 @@ jobs:
           if [[ -n "$(git status --porcelain data/wc.json)" ]]; then
             git add data/wc.json
             git commit -m "data: refresh World Cup results [skip ci]"
-            git push
-            echo "✅ data updated"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main && git push && { echo "✅ data updated"; exit 0; }
+              echo "push retry $i"; sleep 4
+            done
+            echo "::warning::could not push after retries"; exit 0
           else
             echo "no change"
           fi
