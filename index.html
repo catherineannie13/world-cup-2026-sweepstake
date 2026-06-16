@@ -503,9 +503,14 @@ function renderPlayers(M){
     </div>`).join('');
 }
 
+// strTimestamp from the API is UTC but has no timezone marker, so we append 'Z'
+// and render everything in UK time (BST/GMT) so it's correct for the whole family.
+const UK={timeZone:'Europe/London'};
 function fmtDate(ev){
-  const d=new Date(ev.strTimestamp||ev.dateEvent);
-  return d.toLocaleDateString(undefined,{month:'short',day:'numeric'})+' '+d.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'});
+  let ts=ev.strTimestamp;
+  if(ts && !/[zZ]|[+-]\d\d:?\d\d$/.test(ts)) ts+='Z';
+  const d=new Date(ts || ev.dateEvent);
+  return d.toLocaleDateString('en-GB',{...UK,month:'short',day:'numeric'})+' '+d.toLocaleTimeString('en-GB',{...UK,hour:'2-digit',minute:'2-digit'});
 }
 function rosterFixture(ev){
   const h=resolve(ev.strHomeTeam),a=resolve(ev.strAwayTeam);
