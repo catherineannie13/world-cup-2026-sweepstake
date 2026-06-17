@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-17T17:29:08+00:00",
+"updated": "2026-06-17T19:38:32+00:00",
 "count": 72,
 "events": [
 {
@@ -999,7 +999,7 @@
 "strAwayTeam": "DR Congo",
 "intHomeScore": "1",
 "intRound": "1",
-"intAwayScore": "0",
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -1016,7 +1016,7 @@
 "intScoreVotes": null,
 "strResult": "",
 "idVenue": "15873",
-"strVenue": "Reliant Stadium",
+"strVenue": "NRG Stadium",
 "strCountry": "United States",
 "strCity": "Houston, TX",
 "strPoster": "https://r2.thesportsdb.com/images/media/event/poster/bshwqk1775110761.jpg",
@@ -1027,7 +1027,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
