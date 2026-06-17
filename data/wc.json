@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-17T14:08:00+00:00",
+"updated": "2026-06-17T17:29:08+00:00",
 "count": 72,
 "events": [
 {
@@ -997,9 +997,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Portugal",
 "strAwayTeam": "DR Congo",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intRound": "1",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -1027,7 +1027,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
