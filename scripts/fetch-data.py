@@ -2,18 +2,23 @@
 """
 Fetch 2026 World Cup data from TheSportsDB and merge into data/wc.json.
 
-Designed to run on a schedule (GitHub Action) from ONE place, so the free API key
-is hit only a handful of times per hour instead of from every viewer's browser.
+Runs on a schedule (GitHub Action) from ONE place so the free API key is hit only
+a handful of times per hour, never from viewers' browsers.
 
-Resilience rules:
-- We MERGE every response into a map keyed by idEvent — partial/throttled responses
+Why fetch BY ROUND: the free key caps eventsday at ~3 results and eventsseason at
+~15 when throttled, which left gaps. eventsround returns the FULL matchday (24
+matches per group round), so 3 calls get the entire 72-match group stage cleanly.
+Knockout rounds are fetched by their round codes (harmless if not yet populated),
+with eventsseason as a catch-all backup.
+
+Resilience:
+- MERGE every response into a map keyed by idEvent — a partial/throttled response
   can never drop matches we've already captured.
-- A finished result (has scores) is never overwritten by a later null/NS version,
-  so a glitchy response can't blank out a score.
-- data/wc.json therefore only ever grows or updates; it never regresses.
+- A finished result is never overwritten by a later null/NS version.
+- data/wc.json therefore only grows or updates; it never regresses.
 """
-import json, os, sys, time, urllib.request
-from datetime import date, datetime, timedelta, timezone
+import json, os, sys, time, urllib.request, urllib.error
+from datetime import datetime, timezone
 
 API_KEY   = os.environ.get("TSDB_KEY", "123")
 LEAGUE_ID = "4429"           # FIFA World Cup
@@ -21,10 +26,10 @@ SEASON    = "2026"
 OUT       = os.path.join(os.path.dirname(__file__), "..", "data", "wc.json")
 BASE      = f"https://www.thesportsdb.com/api/v1/json/{API_KEY}"
 
-# Date window to sweep day-by-day (catches both recent results and upcoming fixtures).
-# Defaults to a rolling window; override with WINDOW_START / WINDOW_END for a full seed.
-START = os.environ.get("WINDOW_START")
-END   = os.environ.get("WINDOW_END")
+GROUP_ROUNDS = [1, 2, 3]
+# TheSportsDB knockout round codes (Round of 32 → Final). Empty responses are
+# harmless; eventsseason also catches knockout matches as a backup.
+KO_ROUNDS = [180, 170, 160, 150, 140, 125, 200]
 
 
 def get(url, tries=3):
@@ -55,54 +60,40 @@ def merge(into, events):
         if not eid:
             continue
         old = into.get(eid)
-        # don't let a null/NS response clobber a result we already have
         if old and finished(old) and not finished(ev):
-            continue
+            continue  # don't let a null/NS response clobber a result we already have
         if eid not in into:
             added += 1
         into[eid] = ev
     return added
 
 
-def daterange(s, e):
-    d0 = datetime.strptime(s, "%Y-%m-%d").date()
-    d1 = datetime.strptime(e, "%Y-%m-%d").date()
-    while d0 <= d1:
-        yield d0.isoformat()
-        d0 += timedelta(days=1)
-
-
 def main():
-    # load existing
     events = {}
     if os.path.exists(OUT):
         try:
-            prev = json.load(open(OUT))
-            for ev in prev.get("events", []):
+            for ev in json.load(open(OUT)).get("events", []):
                 if ev.get("idEvent"):
                     events[ev["idEvent"]] = ev
         except Exception as e:
             print(f"  ! could not read existing {OUT}: {e}", file=sys.stderr)
     print(f"start: {len(events)} events in store")
 
-    # 1) bulk season fetch
+    # bulk season fetch (catch-all)
     d = get(f"{BASE}/eventsseason.php?id={LEAGUE_ID}&s={SEASON}")
     if d:
-        print(f"  season: +{merge(events, d.get('events'))} new")
-    time.sleep(1)
+        print(f"  season: +{merge(events, d.get('events'))} new ({len(d.get('events') or [])} returned)")
+    time.sleep(0.6)
 
-    # 2) day-by-day sweep (rolling window, or full range when seeding)
-    today = datetime.now(timezone.utc).date()
-    start = START or (today - timedelta(days=2)).isoformat()
-    end   = END   or (today + timedelta(days=10)).isoformat()
-    for day in daterange(start, end):
-        dd = get(f"{BASE}/eventsday.php?d={day}&l={LEAGUE_ID}")
-        n = merge(events, dd.get("events")) if dd else 0
-        if n:
-            print(f"  {day}: +{n} new")
-        time.sleep(0.4)  # be polite to the free API
+    # by-round: full matchdays for group stage + knockout rounds
+    for r in GROUP_ROUNDS + KO_ROUNDS:
+        rr = get(f"{BASE}/eventsround.php?id={LEAGUE_ID}&r={r}&s={SEASON}")
+        n_ret = len(rr.get("events") or []) if rr else 0
+        n_new = merge(events, rr.get("events")) if rr else 0
+        if n_ret:
+            print(f"  round {r}: +{n_new} new ({n_ret} returned)")
+        time.sleep(0.5)
 
-    # write out, sorted by kickoff
     out_events = sorted(events.values(), key=lambda e: (e.get("strTimestamp") or e.get("dateEvent") or ""))
     payload = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "count": len(out_events), "events": out_events}
