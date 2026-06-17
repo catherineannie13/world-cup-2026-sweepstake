@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-17T19:38:32+00:00",
+"updated": "2026-06-17T22:03:10+00:00",
 "count": 72,
 "events": [
 {
@@ -1046,12 +1046,12 @@
 "strDescriptionEN": "",
 "strHomeTeam": "England",
 "strAwayTeam": "Croatia",
-"intHomeScore": null,
+"intHomeScore": "4",
 "intRound": "1",
-"intAwayScore": null,
+"intAwayScore": "2",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-17",
 "dateEventLocal": "2026-06-17",
 "strTime": "20:00:00",
@@ -1076,7 +1076,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
