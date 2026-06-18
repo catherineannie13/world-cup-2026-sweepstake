@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-18T19:27:19+00:00",
+"updated": "2026-06-18T21:34:20+00:00",
 "count": 72,
 "events": [
 {
@@ -1242,12 +1242,12 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Switzerland",
 "strAwayTeam": "Bosnia-Herzegovina",
-"intHomeScore": "0",
+"intHomeScore": "4",
 "intRound": "2",
-"intAwayScore": "0",
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-18",
 "dateEventLocal": "2026-06-18",
 "strTime": "19:00:00",
@@ -1272,7 +1272,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
