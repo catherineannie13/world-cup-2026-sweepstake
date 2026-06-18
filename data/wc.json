@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-18T21:34:20+00:00",
+"updated": "2026-06-18T23:44:37+00:00",
 "count": 72,
 "events": [
 {
@@ -1291,9 +1291,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Canada",
 "strAwayTeam": "Qatar",
-"intHomeScore": null,
+"intHomeScore": "5",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1321,7 +1321,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
