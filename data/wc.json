@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-19T18:16:06+00:00",
+"updated": "2026-06-19T20:14:31+00:00",
 "count": 72,
 "events": [
 {
@@ -1389,9 +1389,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "USA",
 "strAwayTeam": "Australia",
-"intHomeScore": null,
+"intHomeScore": "2",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1419,7 +1419,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
