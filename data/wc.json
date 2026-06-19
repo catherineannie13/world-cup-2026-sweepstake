@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-19T21:43:44+00:00",
+"updated": "2026-06-19T22:56:35+00:00",
 "count": 72,
 "events": [
 {
@@ -1438,9 +1438,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Scotland",
 "strAwayTeam": "Morocco",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1468,7 +1468,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "HT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
