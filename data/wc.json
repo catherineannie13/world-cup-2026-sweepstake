@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-20T17:00:47+00:00",
+"updated": "2026-06-20T18:54:21+00:00",
 "count": 72,
 "events": [
 {
@@ -1585,9 +1585,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Netherlands",
 "strAwayTeam": "Sweden",
-"intHomeScore": null,
+"intHomeScore": "5",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -1604,7 +1604,7 @@
 "intScoreVotes": null,
 "strResult": "",
 "idVenue": "15873",
-"strVenue": "Reliant Stadium",
+"strVenue": "NRG Stadium",
 "strCountry": "United States",
 "strCity": "Houston, TX",
 "strPoster": "https://r2.thesportsdb.com/images/media/event/poster/1rtu7v1775110765.jpg",
@@ -1615,7 +1615,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
