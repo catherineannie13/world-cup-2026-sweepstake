@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-20T10:57:25+00:00",
+"updated": "2026-06-20T12:53:04+00:00",
 "count": 72,
 "events": [
 {
@@ -1222,7 +1222,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/qdnthc1775111157.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=C_2Lx8Wg1kg",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1271,7 +1271,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/nddtwn1775111158.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=c9wbxaKBu2E",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1320,7 +1320,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/06doci1775111121.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=HTR0DIvBYlg",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1345,7 +1345,7 @@
 "intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-19",
 "dateEventLocal": "2026-06-18",
 "strTime": "01:00:00",
@@ -1369,7 +1369,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/n80c7b1775111122.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=o_AAtfdVp3Y",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
