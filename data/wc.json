@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-20T18:54:21+00:00",
+"updated": "2026-06-20T20:13:53+00:00",
 "count": 72,
 "events": [
 {
@@ -1615,7 +1615,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -1634,9 +1634,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Germany",
 "strAwayTeam": "Ivory Coast",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1664,7 +1664,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
