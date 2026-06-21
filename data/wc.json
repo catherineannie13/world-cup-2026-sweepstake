@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-21T18:59:33+00:00",
+"updated": "2026-06-21T20:43:53+00:00",
 "count": 72,
 "events": [
 {
@@ -1830,9 +1830,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Belgium",
 "strAwayTeam": "Iran",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1860,7 +1860,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
