@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-21T17:04:23+00:00",
+"updated": "2026-06-21T18:59:33+00:00",
 "count": 72,
 "events": [
 {
@@ -1781,7 +1781,7 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Spain",
 "strAwayTeam": "Saudi Arabia",
-"intHomeScore": "3",
+"intHomeScore": "4",
 "intRound": "2",
 "intAwayScore": "0",
 "intSpectators": null,
@@ -1811,7 +1811,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "HT",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
