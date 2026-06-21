@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-20T23:08:01+00:00",
+"updated": "2026-06-21T01:58:01+00:00",
 "count": 72,
 "events": [
 {
@@ -1683,9 +1683,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Ecuador",
 "strAwayTeam": "Curaçao",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1713,7 +1713,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
