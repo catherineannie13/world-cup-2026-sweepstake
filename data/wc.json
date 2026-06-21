@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-21T20:43:53+00:00",
+"updated": "2026-06-21T22:13:53+00:00",
 "count": 72,
 "events": [
 {
@@ -1835,7 +1835,7 @@
 "intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-21",
 "dateEventLocal": "2026-06-21",
 "strTime": "19:00:00",
@@ -1860,7 +1860,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -1879,9 +1879,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Uruguay",
 "strAwayTeam": "Cape Verde",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1909,7 +1909,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
