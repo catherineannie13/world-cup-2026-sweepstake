@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-22T10:21:36+00:00",
+"updated": "2026-06-22T15:35:42+00:00",
 "count": 72,
 "events": [
 {
@@ -1786,7 +1786,7 @@
 "intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-21",
 "dateEventLocal": "2026-06-21",
 "strTime": "16:00:00",
@@ -1810,7 +1810,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/ogcaxm1775111130.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=frplYMUG3AE",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1859,7 +1859,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/sy9v6l1775111129.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=MNUH8OqQGgE",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1884,7 +1884,7 @@
 "intAwayScore": "2",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-21",
 "dateEventLocal": "2026-06-21",
 "strTime": "22:00:00",
@@ -1908,7 +1908,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/r3aiuo1775111131.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=RR1QMWchMXs",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1933,7 +1933,7 @@
 "intAwayScore": "3",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-22",
 "dateEventLocal": "2026-06-21",
 "strTime": "01:00:00",
@@ -1957,7 +1957,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/rhlqic1775111130.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=0XtNAQiyaX4",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
