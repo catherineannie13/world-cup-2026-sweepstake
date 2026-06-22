@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-22T19:25:41+00:00",
+"updated": "2026-06-22T21:38:18+00:00",
 "count": 72,
 "events": [
 {
@@ -2026,9 +2026,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "France",
 "strAwayTeam": "Iraq",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -2056,7 +2056,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
