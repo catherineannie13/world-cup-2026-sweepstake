@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-21T23:50:35+00:00",
+"updated": "2026-06-22T04:07:28+00:00",
 "count": 72,
 "events": [
 {
@@ -1909,7 +1909,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -1928,9 +1928,9 @@
 "strDescriptionEN": "",
 "strHomeTeam": "New Zealand",
 "strAwayTeam": "Egypt",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "3",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -1958,7 +1958,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
