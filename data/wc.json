@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-22T04:07:28+00:00",
+"updated": "2026-06-22T10:21:36+00:00",
 "count": 72,
 "events": [
 {
@@ -1614,7 +1614,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/w9xyf21775111159.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=tm1PRvtp1PM",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1639,7 +1639,7 @@
 "intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-20",
 "dateEventLocal": "2026-06-20",
 "strTime": "20:00:00",
@@ -1663,7 +1663,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/io5shn1775111127.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=_3PYS5oCgvQ",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1712,7 +1712,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/87f8q91775111126.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=nYoSztBShPE",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1761,7 +1761,7 @@
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/k125fe1775111128.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=V7z6uzD91Ao",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -1805,7 +1805,7 @@
 "strCity": "Atlanta, GA",
 "strPoster": "https://r2.thesportsdb.com/images/media/event/poster/atuecw1775110732.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/950j3w1782121298.jpg",
 "strThumb": "https://r2.thesportsdb.com/images/media/event/thumb/kv7yiz1775058345.jpg",
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/ogcaxm1775111130.jpg",
 "strMap": null,
@@ -1854,7 +1854,7 @@
 "strCity": "Inglewood, CA",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/pxqzre1781600013.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/gwemjj1782121297.jpg",
 "strThumb": "https://www.thesportsdb.com/images/media/event/thumb/vpptny1781600002.jpg",
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/sy9v6l1775111129.jpg",
 "strMap": null,
@@ -1903,7 +1903,7 @@
 "strCity": "Miami Gardens, FL",
 "strPoster": "https://r2.thesportsdb.com/images/media/event/poster/y7bqso1775110733.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/hgxky11782121299.jpg",
 "strThumb": "https://r2.thesportsdb.com/images/media/event/thumb/ga832m1775058346.jpg",
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/r3aiuo1775111131.jpg",
 "strMap": null,
@@ -1952,7 +1952,7 @@
 "strCity": "Vancouver, BC",
 "strPoster": "https://r2.thesportsdb.com/images/media/event/poster/d6fdnq1775110731.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/oz3gfy1782121298.jpg",
 "strThumb": "https://r2.thesportsdb.com/images/media/event/thumb/zxmks31775058344.jpg",
 "strBanner": "https://r2.thesportsdb.com/images/media/event/banner/rhlqic1775111130.jpg",
 "strMap": null,
