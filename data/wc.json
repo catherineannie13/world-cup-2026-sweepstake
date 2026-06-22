@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-22T15:35:42+00:00",
+"updated": "2026-06-22T19:25:41+00:00",
 "count": 72,
 "events": [
 {
@@ -1977,12 +1977,12 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Argentina",
 "strAwayTeam": "Austria",
-"intHomeScore": null,
+"intHomeScore": "2",
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-22",
 "dateEventLocal": "2026-06-22",
 "strTime": "17:00:00",
@@ -2007,7 +2007,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
