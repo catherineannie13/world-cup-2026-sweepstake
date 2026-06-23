@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-23T15:47:22+00:00",
+"updated": "2026-06-23T17:53:17+00:00",
 "count": 72,
 "events": [
 {
@@ -2261,11 +2261,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Portugal",
 "strAwayTeam": "Uzbekistan",
-"intHomeScore": null,
+"intHomeScore": "3",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -2293,7 +2293,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "HT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
