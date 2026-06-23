@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-23T21:56:27+00:00",
+"updated": "2026-06-23T23:10:01+00:00",
 "count": 72,
 "events": [
 {
@@ -2319,7 +2319,7 @@
 "intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": null,
+"strWeather": "",
 "dateEvent": "2026-06-23",
 "dateEventLocal": "2026-06-23",
 "strTime": "20:00:00",
@@ -2344,7 +2344,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -2363,11 +2363,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Panama",
 "strAwayTeam": "Croatia",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -2395,7 +2395,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
