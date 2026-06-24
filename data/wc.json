@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-24T21:09:51+00:00",
+"updated": "2026-06-24T22:46:55+00:00",
 "count": 72,
 "events": [
 {
@@ -2567,11 +2567,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Morocco",
 "strAwayTeam": "Haiti",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "2",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -2599,7 +2599,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -2618,11 +2618,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Scotland",
 "strAwayTeam": "Brazil",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -2650,7 +2650,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
