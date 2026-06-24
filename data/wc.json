@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-24T01:25:08+00:00",
+"updated": "2026-06-24T05:36:30+00:00",
 "count": 72,
 "events": [
 {
@@ -2414,11 +2414,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Colombia",
 "strAwayTeam": "DR Congo",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "2",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -2446,7 +2446,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
