@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-24T12:06:19+00:00",
+"updated": "2026-06-24T15:18:17+00:00",
 "count": 72,
 "events": [
 {
@@ -2329,8 +2329,8 @@
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
 "idAwayTeam": "134513",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
-"intScore": null,
-"intScoreVotes": null,
+"intScore": "2",
+"intScoreVotes": "1",
 "strResult": "",
 "idVenue": "15816",
 "strVenue": "Gillette Stadium",
