@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-25T20:55:48+00:00",
+"updated": "2026-06-25T22:21:36+00:00",
 "count": 72,
 "events": [
 {
@@ -2775,7 +2775,7 @@
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": "1",
+"intAwayScore": "2",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -2803,7 +2803,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "HT",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -2822,7 +2822,7 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Ecuador",
 "strAwayTeam": "Germany",
-"intHomeScore": "1",
+"intHomeScore": "2",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
@@ -2854,7 +2854,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "HT",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
