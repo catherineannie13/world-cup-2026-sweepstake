@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-26T17:46:57+00:00",
+"updated": "2026-06-26T19:45:30+00:00",
 "count": 72,
 "events": [
 {
@@ -3077,11 +3077,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Norway",
 "strAwayTeam": "France",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "3",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3109,7 +3109,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3128,11 +3128,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Senegal",
 "strAwayTeam": "Iraq",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3160,7 +3160,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
