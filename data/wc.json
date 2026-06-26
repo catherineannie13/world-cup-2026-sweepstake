@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-26T07:51:37+00:00",
+"updated": "2026-06-26T10:50:29+00:00",
 "count": 72,
 "events": [
 {
@@ -388,7 +388,7 @@
 "strTimeLocal": "16:00:00",
 "strGroup": "D",
 "idHomeTeam": "134500",
-"strHomeTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+"strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
 "idAwayTeam": "135985",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png",
 "intScore": null,
@@ -1461,7 +1461,7 @@
 "idHomeTeam": "134514",
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
 "idAwayTeam": "134500",
-"strAwayTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+"strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
 "intScore": null,
 "intScoreVotes": null,
 "strResult": "",
@@ -2991,7 +2991,7 @@
 "idHomeTeam": "136471",
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
 "idAwayTeam": "134500",
-"strAwayTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+"strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
 "intScore": null,
 "intScoreVotes": null,
 "strResult": "",
