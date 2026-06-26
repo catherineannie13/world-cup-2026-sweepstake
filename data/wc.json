@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-26T19:45:30+00:00",
+"updated": "2026-06-26T21:18:00+00:00",
 "count": 72,
 "events": [
 {
@@ -3081,7 +3081,7 @@
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": "3",
+"intAwayScore": "4",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3109,7 +3109,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3128,7 +3128,7 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Senegal",
 "strAwayTeam": "Iraq",
-"intHomeScore": "1",
+"intHomeScore": "5",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
@@ -3160,7 +3160,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
