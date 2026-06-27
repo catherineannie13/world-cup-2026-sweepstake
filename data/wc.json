@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-26T22:44:48+00:00",
+"updated": "2026-06-27T00:06:03+00:00",
 "count": 72,
 "events": [
 {
@@ -3179,11 +3179,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Cape Verde",
 "strAwayTeam": "Saudi Arabia",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -3211,7 +3211,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3230,11 +3230,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Uruguay",
 "strAwayTeam": "Spain",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3262,7 +3262,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
