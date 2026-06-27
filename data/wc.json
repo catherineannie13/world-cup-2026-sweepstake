@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-27T04:34:24+00:00",
+"updated": "2026-06-27T07:48:48+00:00",
 "count": 72,
 "events": [
 {
@@ -3313,7 +3313,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3332,11 +3332,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "New Zealand",
 "strAwayTeam": "Belgium",
-"intHomeScore": "0",
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": "3",
+"intAwayScore": "5",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3364,7 +3364,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
