@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-27T21:02:14+00:00",
+"updated": "2026-06-27T22:35:43+00:00",
 "count": 72,
 "events": [
 {
@@ -3383,11 +3383,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Croatia",
 "strAwayTeam": "Ghana",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3415,7 +3415,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3438,7 +3438,7 @@
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": "0",
+"intAwayScore": "2",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3466,7 +3466,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
