@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-28T00:01:21+00:00",
+"updated": "2026-06-28T05:00:02+00:00",
 "count": 72,
 "events": [
 {
@@ -3517,7 +3517,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3536,7 +3536,7 @@
 "strDescriptionEN": "",
 "strHomeTeam": "DR Congo",
 "strAwayTeam": "Uzbekistan",
-"intHomeScore": "0",
+"intHomeScore": "3",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
@@ -3568,7 +3568,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3587,11 +3587,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Algeria",
 "strAwayTeam": "Austria",
-"intHomeScore": null,
+"intHomeScore": "3",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "3",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3619,7 +3619,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -3638,11 +3638,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Jordan",
 "strAwayTeam": "Argentina",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "3",
-"intAwayScore": null,
+"intAwayScore": "3",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": null,
@@ -3670,7 +3670,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 }
