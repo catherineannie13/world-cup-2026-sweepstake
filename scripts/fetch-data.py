@@ -27,9 +27,10 @@ OUT       = os.path.join(os.path.dirname(__file__), "..", "data", "wc.json")
 BASE      = f"https://www.thesportsdb.com/api/v1/json/{API_KEY}"
 
 GROUP_ROUNDS = [1, 2, 3]
-# TheSportsDB knockout round codes (Round of 32 → Final). Empty responses are
-# harmless; eventsseason also catches knockout matches as a backup.
-KO_ROUNDS = [180, 170, 160, 150, 140, 125, 200]
+# TheSportsDB codes knockout rounds by TEAMS REMAINING: R32=32, R16=16, QF=8, SF=4.
+# (The Final/3rd place will be 2/1 — those share codes with group matchdays 1/2, which
+#  GROUP_ROUNDS already fetches, so they're captured too.) Empty responses are harmless.
+KO_ROUNDS = [32, 16, 8, 4]
 
 
 def get(url, tries=3):

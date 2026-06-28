@@ -279,12 +279,16 @@ function process(events){
   Object.keys(OWNER).forEach(t => T[t] = {team:t,owner:OWNER[t],P:0,W:0,D:0,L:0,GF:0,GA:0,pts:0,koBonus:0,
     alive:true,eliminated:false,champion:false,stage:"Group",lastResult:null});
 
-  // classify knockout rounds by match count + date
+  // KO detection. TheSportsDB codes KO rounds by teams remaining (R32=32, R16=16, QF=8, SF=4),
+  // but the Final/3rd reuse codes 2/1, which collide with group matchdays 1/2. Round 3 is only
+  // ever a group matchday, so its last date marks the end of the group stage; any code-1/2 match
+  // happening after that is the Final/3rd place, not a group game.
+  const ri=ev=>+ev.intRound, dt=ev=>+new Date(ev.strTimestamp||ev.dateEvent);
+  let groupEnd=0; events.forEach(ev=>{ if(ri(ev)===3){ const t=dt(ev); if(t>groupEnd) groupEnd=t; } });
+  const isKO=ev=>{ const r=ri(ev); if(r>3) return true; if((r===1||r===2)&&groupEnd>0&&dt(ev)>groupEnd) return true; return false; };
+
   const koByRound = {};
-  events.forEach(ev=>{
-    const r = +ev.intRound;
-    if(r>3){ (koByRound[r]=koByRound[r]||[]).push(ev); }
-  });
+  events.forEach(ev=>{ if(isKO(ev)){ const r=ri(ev); (koByRound[r]=koByRound[r]||[]).push(ev); } });
   const roundMeta = {}; // intRound -> {name, advanceBonus, depth}
   const koRounds = Object.keys(koByRound).map(Number);
   // sort by earliest date so we can disambiguate final vs 3rd place (both 1 match)
@@ -306,14 +310,14 @@ function process(events){
   });
 
   const teamsInKO = new Set();
-  events.forEach(ev=>{ if(+ev.intRound>3){ [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>t&&teamsInKO.add(t)); } });
+  events.forEach(ev=>{ if(isKO(ev)){ [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>t&&teamsInKO.add(t)); } });
 
   const STAGE_RANK={"Group":1,"Round of 32":2,"Round of 16":3,"Quarter-final":4,"Semi-final":5,"3rd Place":5,"Final":6,"Champion":7};
-  const stageOfRound = r => r>3 ? (roundMeta[r]?roundMeta[r].name:"Knockout") : "Group";
 
   // furthest stage each team APPEARS in (scheduled or played) = its current / deepest stage
   events.forEach(ev=>{
-    const st=stageOfRound(+ev.intRound), rank=STAGE_RANK[st]||1;
+    const st = isKO(ev) ? (roundMeta[ri(ev)]?roundMeta[ri(ev)].name:"Knockout") : "Group";
+    const rank=STAGE_RANK[st]||1;
     [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>{
       if(t&&T[t]&&rank>(T[t].stageRank||0)){ T[t].stage=st; T[t].stageRank=rank; }
     });
@@ -325,7 +329,7 @@ function process(events){
     if(!isFinished(ev)) return;
     const h=resolve(ev.strHomeTeam), a=resolve(ev.strAwayTeam);
     const hs=+ev.intHomeScore, as=+ev.intAwayScore;
-    const r=+ev.intRound, ko=r>3, meta=roundMeta[r], isFinal=meta&&meta.name==="Final";
+    const r=+ev.intRound, ko=isKO(ev), meta=roundMeta[r], isFinal=meta&&meta.name==="Final";
     [[h,hs,as,a],[a,as,hs,h]].forEach(([t,gf,ga,opp])=>{
       if(!t||!T[t]) return;
       const s=T[t]; s.P++; s.GF+=gf; s.GA+=ga;
