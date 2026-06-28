@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-28T18:44:19+00:00",
+"updated": "2026-06-28T20:12:51+00:00",
 "count": 88,
 "events": [
 {
@@ -3689,11 +3689,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "South Africa",
 "strAwayTeam": "Canada",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -3721,7 +3721,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
