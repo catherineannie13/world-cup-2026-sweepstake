@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-29T18:29:14+00:00",
+"updated": "2026-06-29T20:27:49+00:00",
 "count": 88,
 "events": [
 {
@@ -3715,7 +3715,7 @@
 "strCity": "Inglewood, CA",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/2bwwji1782546664.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/nxdmha1782762376.jpg",
 "strThumb": "https://www.thesportsdb.com/images/media/event/thumb/1e93ji1782546609.jpg",
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/e8kyu71782546712.jpg",
 "strMap": null,
@@ -3740,7 +3740,7 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Brazil",
 "strAwayTeam": "Japan",
-"intHomeScore": "1",
+"intHomeScore": "2",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
@@ -3766,13 +3766,13 @@
 "strCity": "Houston, TX",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/u7y2gu1782546665.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/1h0itw1782762376.jpg",
 "strThumb": "https://www.thesportsdb.com/images/media/event/thumb/0tu18z1782546611.jpg",
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/svqhcv1782546712.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
-"strStatus": "2H",
+"strVideo": "https://www.youtube.com/watch?v=GiwKDrb6WdA",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
