@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-29T20:27:49+00:00",
+"updated": "2026-06-29T21:53:34+00:00",
 "count": 88,
 "events": [
 {
@@ -3791,11 +3791,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Germany",
 "strAwayTeam": "Paraguay",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -3823,7 +3823,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
