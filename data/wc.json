@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-30T20:29:24+00:00",
+"updated": "2026-06-30T21:59:40+00:00",
 "count": 90,
 "events": [
 {
@@ -3944,11 +3944,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "France",
 "strAwayTeam": "Sweden",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -3976,7 +3976,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "HT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
