@@ -175,6 +175,12 @@ const REFRESH_MS = 120000;
 // (e.g. "Spain") to crown the champion manually. Leave "" the rest of the time.
 const MANUAL_CHAMPION = "";
 
+// Knockout penalty shootouts: the API only stores the level score, so until the NEXT
+// round is published the app can't tell who advanced. List the team that WON the shootout
+// here and the app marks their opponent out immediately. (Once the next round appears it
+// resolves automatically, so old entries are harmless to leave in.)
+const PENS_WINNERS = ["Paraguay"];   // e.g. Paraguay beat Germany on penalties in the R32
+
 /* ============================================================
    ROSTERS (as drawn) + flags
    ============================================================ */
@@ -326,12 +332,16 @@ function process(events){
     }
   });
 
-  // 3) resolve penalty shootouts via the bracket: whoever appears in a later round won
+  // 3) resolve penalty shootouts: prefer the bracket (whoever appears in a later round won),
+  //    then fall back to the manual PENS_WINNERS list for ties the next round hasn't reached yet.
+  const pensWon = new Set(PENS_WINNERS.map(t=>resolve(t)||t));
   pens.forEach(({h,a,rank})=>{
     const hAdv=T[h].reachedRank>rank, aAdv=T[a].reachedRank>rank;
     if(hAdv && !aAdv) T[a].eliminated=true;
     else if(aAdv && !hAdv) T[h].eliminated=true;
-    // neither in a later round yet → next round not published → leave both alive (pending)
+    else if(pensWon.has(h)){ T[h].reachedRank=Math.max(T[h].reachedRank,rank+1); T[a].eliminated=true; }
+    else if(pensWon.has(a)){ T[a].reachedRank=Math.max(T[a].reachedRank,rank+1); T[h].eliminated=true; }
+    // else neither signal yet → leave both alive (pending)
   });
 
   // 4) champion = winner of the actual Final (latest match at the deepest round); pens → MANUAL_CHAMPION
