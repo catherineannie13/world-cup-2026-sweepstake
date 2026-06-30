@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-30T00:05:12+00:00",
+"updated": "2026-06-30T04:44:25+00:00",
 "count": 88,
 "events": [
 {
@@ -3842,11 +3842,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Netherlands",
 "strAwayTeam": "Morocco",
-"intHomeScore": null,
-"intHomeScoreExtra": null,
-"intAwayScoreExtra": null,
+"intHomeScore": "1",
+"intHomeScoreExtra": "2",
+"intAwayScoreExtra": "3",
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -3874,7 +3874,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
