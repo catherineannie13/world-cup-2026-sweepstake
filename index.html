@@ -287,67 +287,71 @@ function process(events){
   let groupEnd=0; events.forEach(ev=>{ if(ri(ev)===3){ const t=dt(ev); if(t>groupEnd) groupEnd=t; } });
   const isKO=ev=>{ const r=ri(ev); if(r>3) return true; if((r===1||r===2)&&groupEnd>0&&dt(ev)>groupEnd) return true; return false; };
 
-  const koByRound = {};
-  events.forEach(ev=>{ if(isKO(ev)){ const r=ri(ev); (koByRound[r]=koByRound[r]||[]).push(ev); } });
-  const roundMeta = {}; // intRound -> {name, advanceBonus, depth}
-  const koRounds = Object.keys(koByRound).map(Number);
-  // sort by earliest date so we can disambiguate final vs 3rd place (both 1 match)
-  const minDate = r => Math.min(...koByRound[r].map(e=>+new Date(e.strTimestamp||e.dateEvent)));
-  koRounds.sort((a,b)=>minDate(a)-minDate(b));
-  koRounds.forEach(r=>{
-    const n = koByRound[r].length;
-    let name="Knockout", adv=5, depth=4;
-    if(n>=16){name="Round of 32";adv=4;depth=4}
-    else if(n>=8){name="Round of 16";adv=6;depth=5}
-    else if(n>=4){name="Quarter-final";adv=9;depth=6}
-    else if(n>=2){name="Semi-final";adv=13;depth=7}
-    else { // 1 match: final or 3rd-place. The later one is the Final.
-      const laterRounds = koRounds.filter(x=>koByRound[x].length===1);
-      const isFinal = r===laterRounds[laterRounds.length-1];
-      name = isFinal? "Final":"3rd Place"; adv = isFinal?20:3; depth = isFinal?9:8;
-    }
-    roundMeta[r] = {name,advanceBonus:adv,depth};
-  });
+  // KO rounds are coded by TEAMS REMAINING (R32=32, R16=16, QF=8, SF=4, Final=2). We name by
+  // code, not match count — a half-published round (e.g. only 1 of 8 R16 ties listed) would be
+  // mis-counted otherwise.
+  const KO_NAME={32:"Round of 32",16:"Round of 16",8:"Quarter-final",4:"Semi-final",2:"Final",1:"Final"};
+  const STAGE_RANK={"Group":1,"Round of 32":2,"Round of 16":3,"Quarter-final":4,"Semi-final":5,"Final":6,"Champion":7};
+  const RANK_NAME={1:"Group",2:"Round of 32",3:"Round of 16",4:"Quarter-final",5:"Semi-final",6:"Final",7:"Champion"};
+  const RANK_BONUS={1:0,2:0,3:4,4:10,5:19,6:32,7:52}; // cumulative advancement bonus by furthest round reached
+  const koRank = ev => isKO(ev) ? (STAGE_RANK[KO_NAME[ri(ev)]]||2) : 1;
 
   const teamsInKO = new Set();
   events.forEach(ev=>{ if(isKO(ev)){ [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>t&&teamsInKO.add(t)); } });
 
-  const STAGE_RANK={"Group":1,"Round of 32":2,"Round of 16":3,"Quarter-final":4,"Semi-final":5,"3rd Place":5,"Final":6,"Champion":7};
-
-  // furthest stage each team APPEARS in (scheduled or played) = its current / deepest stage
+  // 1) furthest round each team APPEARS in (scheduled or played)
+  Object.values(T).forEach(s=>{ s.reachedRank = teamsInKO.has(s.team) ? 2 : 1; });
   events.forEach(ev=>{
-    const st = isKO(ev) ? (roundMeta[ri(ev)]?roundMeta[ri(ev)].name:"Knockout") : "Group";
-    const rank=STAGE_RANK[st]||1;
-    [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>{
-      if(t&&T[t]&&rank>(T[t].stageRank||0)){ T[t].stage=st; T[t].stageRank=rank; }
-    });
+    const rank=koRank(ev);
+    [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>{ if(t&&T[t]&&rank>T[t].reachedRank) T[t].reachedRank=rank; });
   });
-  Object.values(T).forEach(s=>{ if(!s.stageRank){ s.stage="Group"; s.stageRank=1; } });
 
-  // walk finished games: records, advancement bonus, eliminations, champion
-  events.slice().sort((a,b)=>new Date(a.strTimestamp||a.dateEvent)-new Date(b.strTimestamp||b.dateEvent)).forEach(ev=>{
+  // 2) walk finished games: stats (W/D/L, goals, pts) + DECISIVE knockout advancement/elimination
+  const pens=[]; // KO ties level after normal time → decided on penalties (winner not in the score)
+  events.slice().sort((a,b)=>dt(a)-dt(b)).forEach(ev=>{
     if(!isFinished(ev)) return;
     const h=resolve(ev.strHomeTeam), a=resolve(ev.strAwayTeam);
     const hs=+ev.intHomeScore, as=+ev.intAwayScore;
-    const r=+ev.intRound, ko=isKO(ev), meta=roundMeta[r], isFinal=meta&&meta.name==="Final";
+    const ko=isKO(ev), rank=koRank(ev);
     [[h,hs,as,a],[a,as,hs,h]].forEach(([t,gf,ga,opp])=>{
       if(!t||!T[t]) return;
       const s=T[t]; s.P++; s.GF+=gf; s.GA+=ga;
-      if(gf>ga){ s.W++; s.pts+=3; if(ko&&meta){ s.koBonus+=meta.advanceBonus; if(isFinal) s.champion=true; } }
-      else if(gf===ga){ s.D++; s.pts+=1; if(ko && !isFinal) s.eliminated=true; /* KO draw = lost on pens; final via MANUAL_CHAMPION */ }
-      else { s.L++; if(ko) s.eliminated=true; }
-      s.lastResult={gf,ga,opp,round:meta?meta.name:("Group · MD"+r),date:ev.dateEvent,won:gf>ga,draw:gf===ga};
+      if(gf>ga){ s.W++; s.pts+=3; } else if(gf===ga){ s.D++; s.pts+=1; } else { s.L++; }
+      s.lastResult={gf,ga,opp,round:ko?(KO_NAME[ri(ev)]||"Knockout"):("Group · MD"+ri(ev)),date:ev.dateEvent,won:gf>ga,draw:gf===ga};
     });
+    if(ko && h && a && T[h] && T[a]){
+      if(hs>as){ T[h].reachedRank=Math.max(T[h].reachedRank,rank+1); T[a].eliminated=true; }
+      else if(as>hs){ T[a].reachedRank=Math.max(T[a].reachedRank,rank+1); T[h].eliminated=true; }
+      else pens.push({h,a,rank}); // resolve from who turns up in a later round
+    }
   });
 
-  // manual champion override (final won on penalties — API can't tell us)
-  if(MANUAL_CHAMPION && T[MANUAL_CHAMPION]){ Object.values(T).forEach(s=>{s.champion=false}); T[MANUAL_CHAMPION].champion=true; T[MANUAL_CHAMPION].eliminated=false; }
+  // 3) resolve penalty shootouts via the bracket: whoever appears in a later round won
+  pens.forEach(({h,a,rank})=>{
+    const hAdv=T[h].reachedRank>rank, aAdv=T[a].reachedRank>rank;
+    if(hAdv && !aAdv) T[a].eliminated=true;
+    else if(aAdv && !hAdv) T[h].eliminated=true;
+    // neither in a later round yet → next round not published → leave both alive (pending)
+  });
 
-  // alive / eliminated resolution
+  // 4) champion = winner of the actual Final (latest match at the deepest round); pens → MANUAL_CHAMPION
+  let finalEv=null;
+  events.forEach(ev=>{ if(koRank(ev)>=6 && (!finalEv || dt(ev)>dt(finalEv))) finalEv=ev; });
+  if(finalEv && isFinished(finalEv)){
+    const hs=+finalEv.intHomeScore, as=+finalEv.intAwayScore;
+    const w = hs>as ? resolve(finalEv.strHomeTeam) : (as>hs ? resolve(finalEv.strAwayTeam) : null);
+    if(w && T[w]) T[w].champion=true;
+  }
+  if(MANUAL_CHAMPION && T[MANUAL_CHAMPION]){ Object.values(T).forEach(s=>{s.champion=false}); T[MANUAL_CHAMPION].champion=true; }
+
+  // 5) finalise status, stage label, advancement bonus
   Object.values(T).forEach(s=>{
-    if(s.champion){ s.alive=true; s.eliminated=false; s.stage="Champion"; s.stageRank=STAGE_RANK.Champion; return; }
-    if(s.eliminated){ s.alive=false; return; }
-    if(teamsInKO.size>0 && !teamsInKO.has(s.team)){ s.alive=false; s.eliminated=true; } // didn't make the bracket
+    if(s.champion){ s.eliminated=false; s.reachedRank=7; }
+    else if(teamsInKO.size>0 && !teamsInKO.has(s.team)){ s.eliminated=true; } // didn't reach the bracket
+    s.alive = !s.eliminated;
+    s.stageRank = Math.min(s.reachedRank, 7);
+    s.stage = RANK_NAME[s.stageRank] || "Group";
+    s.koBonus = RANK_BONUS[s.stageRank] || 0;
   });
 
   // players — sorted by who's CLOSEST to owning the champion
@@ -367,7 +371,7 @@ function process(events){
     (b.alive-a.alive) || (b.bestReachedRank-a.bestReachedRank) ||
     (b.pts-a.pts) || (b.GF-a.GF));
 
-  return {T,players,events,roundMeta,anyFinished:events.some(isFinished),knockoutsStarted:teamsInKO.size>0};
+  return {T,players,events,anyFinished:events.some(isFinished),knockoutsStarted:teamsInKO.size>0};
 }
 
 /* ============================================================
