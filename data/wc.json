@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-30T08:40:57+00:00",
+"updated": "2026-06-30T11:29:49+00:00",
 "count": 89,
 "events": [
 {
@@ -3686,7 +3686,7 @@
 "strLeague": "FIFA World Cup",
 "strLeagueBadge": "https://r2.thesportsdb.com/images/media/league/badge/e7er5g1696521789.png",
 "strSeason": "2026",
-"strDescriptionEN": "",
+"strDescriptionEN": "The teams' only previous meeting took place in a 2007 friendly, which ended in a 2–0 win for South Africa.\r\n\r\nAfter facing co-hosts Mexico in their opening group stage match, South Africa became the first team in tournament history to face two different host nations in a single edition since Turkey in 2002. It also marked the first time a host nation played a World Cup match outside its own borders, after a 2–1 loss to Switzerland in its final group stage match cost Canada a guaranteed home-field advantage.\r\n\r\nFollowing a goalless 90 minutes, two minutes into stoppage time, Canada vice-captain Stephen Eustáquio gained possession after the ball was headed towards him, before striking right-footed from the edge of the penalty area low into the bottom left corner of the net for the only goal of the match.\r\n\r\nWith this win, Canada advanced to the round of 16 for the first time in their appearances at the World Cup, and will face Morocco in their next match. South Africa were eliminated from the tournament, marking their best World Cup finish since 2010.",
 "strHomeTeam": "South Africa",
 "strAwayTeam": "Canada",
 "intHomeScore": "0",
@@ -3694,7 +3694,7 @@
 "intAwayScoreExtra": null,
 "intRound": "32",
 "intAwayScore": "1",
-"intSpectators": null,
+"intSpectators": "69237",
 "strOfficial": "",
 "strWeather": "",
 "dateEvent": "2026-06-28",
@@ -3708,7 +3708,7 @@
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
 "intScore": null,
 "intScoreVotes": null,
-"strResult": "",
+"strResult": "Canada win 1-0",
 "idVenue": "23720",
 "strVenue": "SoFi Stadium",
 "strCountry": "United States",
@@ -3723,7 +3723,7 @@
 "strVideo": "https://www.youtube.com/watch?v=pVxERbYk7D0",
 "strStatus": "FT",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 },
 {
 "idEvent": "2499835",
@@ -3737,7 +3737,7 @@
 "strLeague": "FIFA World Cup",
 "strLeagueBadge": "https://r2.thesportsdb.com/images/media/league/badge/e7er5g1696521789.png",
 "strSeason": "2026",
-"strDescriptionEN": "",
+"strDescriptionEN": "The teams had previously met 14 times, including once in the World Cup: a 4–1 group stage win for Brazil at the 2006 FIFA World Cup. Their latest encounter took place at the 2025 Kirin Challenge Cup last October, when Japan gained their first win ever against Brazil in a 3–2 comeback.\r\n\r\nAfter 29 minutes, Japan midfielder Kaishu Sano made a solo run from the halfway line, before shotting low from outside the penalty area into the bottom left corner of the net. Japan nearly conceded seven minutes into the second half, with goalkeeper Zion Suzuki just managing to keep it off the line.\r\n\r\nDefender Casemiro equalized for Brazil at 56 minutes, with a close-range header at the back post after a cross from Gabriel Magalhães from the left. With just a minute of added time remaining, Bruno Guimarães passed low into to Gabriel Martinelli on the left of the penalty area who shot low to the bottom right corner of the net in off the post to win the game for Brazil on a 2-1 scoreline.\r\n\r\nThe victory advanced Brazil to the round of 16, where they will face either Ivory Coast or Norway. Japan were eliminated, marking the third consecutive World Cup that they have had the lead in the knockout rounds and lost, with previous defeats to Croatia (in 2022) and Belgium (in 2018).",
 "strHomeTeam": "Brazil",
 "strAwayTeam": "Japan",
 "intHomeScore": "2",
@@ -3745,7 +3745,7 @@
 "intAwayScoreExtra": null,
 "intRound": "32",
 "intAwayScore": "1",
-"intSpectators": null,
+"intSpectators": "68777",
 "strOfficial": "",
 "strWeather": "",
 "dateEvent": "2026-06-29",
@@ -3759,7 +3759,7 @@
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
 "intScore": null,
 "intScoreVotes": null,
-"strResult": "",
+"strResult": "Brazil win 2-1",
 "idVenue": "15873",
 "strVenue": "NRG Stadium",
 "strCountry": "United States",
@@ -3774,7 +3774,7 @@
 "strVideo": "https://www.youtube.com/watch?v=GiwKDrb6WdA",
 "strStatus": "FT",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 },
 {
 "idEvent": "2502846",
@@ -3788,7 +3788,7 @@
 "strLeague": "FIFA World Cup",
 "strLeagueBadge": "https://r2.thesportsdb.com/images/media/league/badge/e7er5g1696521789.png",
 "strSeason": "2026",
-"strDescriptionEN": "",
+"strDescriptionEN": "The teams had met twice—once in the round of 16 at the 2002 FIFA World Cup, in which Germany defeated Paraguay 1–0, and a 2013 friendly match which ended 3–3. \r\n\r\nAt 42 minutes, Paraguay earned a corner in the German half. Although goalkeeper Manuel Neuer managed to punch the ball out of the box, Germany failed to maintain possession. A series of passes sent the ball into the path of Paraguay midfielder Julio Enciso, who headed the ball past Neuer. This opened up the scoring, and charted Paraguay's first ever goal in the knockout stages of the FIFA World Cup.\r\n\r\nEight minutes into the second half, German midfielder Florian Wirtz sent a cross into the Paraguay box which found the head of his teammate Kai Havertz, who flicked it into goal for an equalizer.\r\n\r\nDuring extra time, a German corner kick saw defender Jonathan Tah head the ball into the Paraguayan net. However, the goal was disallowed as VAR review found that goalkeeper Orlando Gill had been fouled in his box, and was unable to challenge the ball fairly. In the ensuing penalty shootout, the teams were tied at the end of five shots, and the match went into sudden death. Tah sent the ball over the net, granting centre-back José Canale the chance to score and ending the shootout 4–3 in Paraguay's favor.\r\n\r\nWith this victory, Paraguay advanced to the round of 16, eliminating Germany. They will face France or Sweden in their next match. This also marks the first time Germany were ever defeated in a penalty shootout in the World Cup.",
 "strHomeTeam": "Germany",
 "strAwayTeam": "Paraguay",
 "intHomeScore": "1",
@@ -3796,7 +3796,7 @@
 "intAwayScoreExtra": "4",
 "intRound": "32",
 "intAwayScore": "1",
-"intSpectators": null,
+"intSpectators": "63945",
 "strOfficial": "",
 "strWeather": "",
 "dateEvent": "2026-06-29",
@@ -3808,9 +3808,9 @@
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
 "idAwayTeam": "136471",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-"intScore": null,
-"intScoreVotes": null,
-"strResult": "",
+"intScore": "8",
+"intScoreVotes": "1",
+"strResult": "Paraguay win 4-3 on penalties",
 "idVenue": "15816",
 "strVenue": "Gillette Stadium",
 "strCountry": "United States",
@@ -3825,7 +3825,7 @@
 "strVideo": "https://www.youtube.com/watch?v=gVYimAh7meQ",
 "strStatus": "AP",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 },
 {
 "idEvent": "2499836",
@@ -3839,7 +3839,7 @@
 "strLeague": "FIFA World Cup",
 "strLeagueBadge": "https://r2.thesportsdb.com/images/media/league/badge/e7er5g1696521789.png",
 "strSeason": "2026",
-"strDescriptionEN": "",
+"strDescriptionEN": "The teams had previously faced each other three times, including once in the World Cup: a 2–1 group stage win for Netherlands at the 1994 FIFA World Cup. Their latest encounter was in a friendly match in 2017, also won by the Netherlands in a 2–1 margin.\r\n\r\nFollowing a goalless first half, including two back-to-back saves from Dutch goalkeeper Bart Verbruggen, the Netherlands went in front after 72 minutes, a header from Wout Weghorst sent the ball into the path of his teammate Crysencio Summerville, who began a run into the Moroccan half. Though he was brought down, the Moroccan defence failed to clear the ball and it broke into the path of Cody Gakpo who smashed the ball low into the net from twelve yards out to put the Netherlands into the lead.\r\n\r\nAs the game went into stoppage time, a long ball from outside the box on the left found the head of centre-back Issa Diop, who headed powerfully to the right of the net from six yards out for the equalizer. After a goalless extra-time, the match went to a penalty shoot-out. Ismael Saibari scored the winning penalty in the shoot-out with a low shot to the left to secure victory for Morocco, after the Dutch missed three penalty kicks, including their last two kicks.\r\n\r\nMorocco advanced to the round of 16, and will face co-host Canada next. This match marks the Netherlands' third consecutive World Cup elimination via penalty shootout, with similar defeats happening in 2022 and 2014 (both against Argentina).",
 "strHomeTeam": "Netherlands",
 "strAwayTeam": "Morocco",
 "intHomeScore": "1",
@@ -3847,7 +3847,7 @@
 "intAwayScoreExtra": "3",
 "intRound": "32",
 "intAwayScore": "1",
-"intSpectators": null,
+"intSpectators": "51243",
 "strOfficial": "",
 "strWeather": "",
 "dateEvent": "2026-06-30",
@@ -3861,9 +3861,9 @@
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
 "intScore": null,
 "intScoreVotes": null,
-"strResult": "",
-"idVenue": "17551",
-"strVenue": "Estadio BBVA Bancomer",
+"strResult": "Morocco win 3-2 on penalties",
+"idVenue": "21191",
+"strVenue": "Estadio BBVA",
 "strCountry": "Mexico",
 "strCity": "Guadalupe, NL",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/b0uf4e1782546665.jpg",
@@ -3873,10 +3873,10 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/5sed321782546713.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
-"strStatus": "PEN",
+"strVideo": "https://www.youtube.com/watch?v=He2Fm2LCB0U",
+"strStatus": "AP",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 },
 {
 "idEvent": "2502605",
