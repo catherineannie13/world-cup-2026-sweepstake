@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-30T16:04:05+00:00",
+"updated": "2026-06-30T18:19:07+00:00",
 "count": 89,
 "events": [
 {
@@ -3893,11 +3893,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Ivory Coast",
 "strAwayTeam": "Norway",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -3925,7 +3925,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
