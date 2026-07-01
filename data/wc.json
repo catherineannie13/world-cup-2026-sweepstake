@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-01T16:05:10+00:00",
+"updated": "2026-07-01T18:24:49+00:00",
 "count": 91,
 "events": [
 {
@@ -4046,11 +4046,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "England",
 "strAwayTeam": "DR Congo",
-"intHomeScore": "0",
+"intHomeScore": "2",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": "0",
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4078,7 +4078,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
