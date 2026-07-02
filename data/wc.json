@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-02T21:44:18+00:00",
+"updated": "2026-07-02T23:05:16+00:00",
 "count": 93,
 "events": [
 {
@@ -4250,11 +4250,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Portugal",
 "strAwayTeam": "Croatia",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4282,7 +4282,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
