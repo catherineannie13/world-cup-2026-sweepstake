@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-02T13:57:50+00:00",
+"updated": "2026-07-02T16:07:50+00:00",
 "count": 93,
 "events": [
 {
@@ -4165,8 +4165,8 @@
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
 "idAwayTeam": "134510",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/wtqqst1455463120.png",
-"intScore": null,
-"intScoreVotes": null,
+"intScore": "9",
+"intScoreVotes": "1",
 "strResult": "",
 "idVenue": "16090",
 "strVenue": "Levi's Stadium",
