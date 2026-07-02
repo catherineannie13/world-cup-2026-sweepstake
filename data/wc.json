@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-02T18:13:13+00:00",
+"updated": "2026-07-02T20:01:28+00:00",
 "count": 93,
 "events": [
 {
@@ -4199,11 +4199,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Spain",
 "strAwayTeam": "Austria",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4231,7 +4231,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "HT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
