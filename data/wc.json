@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-01T23:24:05+00:00",
+"updated": "2026-07-02T01:32:12+00:00",
 "count": 91,
 "events": [
 {
@@ -4148,11 +4148,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "USA",
 "strAwayTeam": "Bosnia-Herzegovina",
-"intHomeScore": null,
+"intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "32",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4180,7 +4180,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
