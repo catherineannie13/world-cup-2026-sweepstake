@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-03T20:38:37+00:00",
+"updated": "2026-07-03T22:03:49+00:00",
 "count": 94,
 "events": [
 {
@@ -4353,8 +4353,8 @@
 "strHomeTeam": "Australia",
 "strAwayTeam": "Egypt",
 "intHomeScore": "1",
-"intHomeScoreExtra": null,
-"intAwayScoreExtra": null,
+"intHomeScoreExtra": "2",
+"intAwayScoreExtra": "4",
 "intRound": "32",
 "intAwayScore": "1",
 "intSpectators": null,
@@ -4384,9 +4384,9 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "ET",
+"strStatus": "AP",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 },
 {
 "idEvent": "2502849",
