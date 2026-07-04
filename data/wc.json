@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-04T22:29:45+00:00",
+"updated": "2026-07-04T23:34:51+00:00",
 "count": 96,
 "events": [
 {
@@ -4560,10 +4560,10 @@
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": "0",
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
-"strWeather": "",
+"strWeather": "Sunny",
 "dateEvent": "2026-07-04",
 "dateEventLocal": "2026-07-04",
 "strTime": "21:00:00",
@@ -4588,7 +4588,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
