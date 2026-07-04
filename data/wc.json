@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-04T20:08:11+00:00",
+"updated": "2026-07-04T21:27:33+00:00",
 "count": 96,
 "events": [
 {
@@ -4536,7 +4536,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/3t19lu1782798429.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=B-WtYh_aNag",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -4556,11 +4556,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Paraguay",
 "strAwayTeam": "France",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4588,7 +4588,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
