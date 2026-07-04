@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-04T15:43:33+00:00",
+"updated": "2026-07-04T17:03:58+00:00",
 "count": 96,
 "events": [
 {
@@ -4505,11 +4505,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Canada",
 "strAwayTeam": "Morocco",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4537,7 +4537,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
