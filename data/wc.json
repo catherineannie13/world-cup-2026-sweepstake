@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-04T02:47:52+00:00",
+"updated": "2026-07-04T06:18:39+00:00",
 "count": 94,
 "events": [
 {
@@ -4435,7 +4435,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "FT",
+"strStatus": "AET",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -4486,7 +4486,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
