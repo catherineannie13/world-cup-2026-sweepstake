@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-06T03:25:13+00:00",
+"updated": "2026-07-06T08:01:55+00:00",
 "count": 96,
 "events": [
 {
@@ -4536,7 +4536,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/3t19lu1782798429.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "https://www.youtube.com/watch?v=B-WtYh_aNag",
+"strVideo": "https://www.youtube.com/watch?v=sAYjtcpoaf0",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -4587,7 +4587,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/n45v2t1782895939.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "https://www.youtube.com/watch?v=5OxGV8aVG-k",
+"strVideo": "https://www.youtube.com/watch?v=4HZCeb88uSI",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -4633,12 +4633,12 @@
 "strCity": "East Rutherford, NJ",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/oktv6e1782848876.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/dns4hl1783322757.jpg",
 "strThumb": "https://www.thesportsdb.com/images/media/event/thumb/7d01zx1782848875.jpg",
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/oi5oeg1782848877.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=g0kC9asDAIQ",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -4646,7 +4646,7 @@
 {
 "idEvent": "2507706",
 "idAPIfootball": "1570714",
-"strTimestamp": "2026-07-06T00:00:00",
+"strTimestamp": "2026-07-06T02:00:00",
 "strEvent": "Mexico vs England",
 "strEventAlternate": "England @ Mexico",
 "strFilename": "FIFA World Cup 2026-07-06 Mexico vs England",
@@ -4668,7 +4668,7 @@
 "strWeather": "",
 "dateEvent": "2026-07-06",
 "dateEventLocal": "2026-07-05",
-"strTime": "00:00:00",
+"strTime": "02:00:00",
 "strTimeLocal": "19:00:00",
 "strGroup": "",
 "idHomeTeam": "134497",
@@ -4684,15 +4684,15 @@
 "strCity": "Mexico City, MX",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/7lx2a31782983935.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/b167ez1783322758.jpg",
 "strThumb": "https://www.thesportsdb.com/images/media/event/thumb/yz4qzg1782983933.jpg",
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/lcaq9k1782983936.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=1FVVKb0UNFo",
 "strStatus": "FT",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 },
 {
 "idEvent": "2511721",
