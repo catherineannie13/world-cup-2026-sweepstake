@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-05T23:34:23+00:00",
+"updated": "2026-07-06T03:25:13+00:00",
 "count": 96,
 "events": [
 {
@@ -4646,7 +4646,7 @@
 {
 "idEvent": "2507706",
 "idAPIfootball": "1570714",
-"strTimestamp": "2026-07-06T01:00:00",
+"strTimestamp": "2026-07-06T00:00:00",
 "strEvent": "Mexico vs England",
 "strEventAlternate": "England @ Mexico",
 "strFilename": "FIFA World Cup 2026-07-06 Mexico vs England",
@@ -4658,17 +4658,17 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Mexico",
 "strAwayTeam": "England",
-"intHomeScore": null,
+"intHomeScore": "2",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": null,
+"intAwayScore": "3",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
 "dateEvent": "2026-07-06",
 "dateEventLocal": "2026-07-05",
-"strTime": "01:00:00",
+"strTime": "00:00:00",
 "strTimeLocal": "19:00:00",
 "strGroup": "",
 "idHomeTeam": "134497",
@@ -4690,7 +4690,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
