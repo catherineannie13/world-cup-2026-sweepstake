@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-06T18:17:11+00:00",
+"updated": "2026-07-06T20:23:31+00:00",
 "count": 96,
 "events": [
 {
@@ -4709,11 +4709,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Portugal",
 "strAwayTeam": "Spain",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4741,7 +4741,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
