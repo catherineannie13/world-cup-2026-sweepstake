@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-07T22:36:46+00:00",
+"updated": "2026-07-07T23:56:21+00:00",
 "count": 96,
 "events": [
 {
@@ -4863,8 +4863,8 @@
 "strHomeTeam": "Switzerland",
 "strAwayTeam": "Colombia",
 "intHomeScore": "0",
-"intHomeScoreExtra": null,
-"intAwayScoreExtra": null,
+"intHomeScoreExtra": "4",
+"intAwayScoreExtra": "3",
 "intRound": "16",
 "intAwayScore": "0",
 "intSpectators": null,
@@ -4894,9 +4894,9 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "BT",
+"strStatus": "AP",
 "strPostponed": "no",
-"strLocked": "unlocked"
+"strLocked": "locked"
 }
 ]
 }
