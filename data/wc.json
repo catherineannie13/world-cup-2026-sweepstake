@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-07T01:16:06+00:00",
+"updated": "2026-07-07T05:36:13+00:00",
 "count": 96,
 "events": [
 {
@@ -4740,7 +4740,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/alt9ch1783166776.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=KHTXATo7kL8",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -4764,7 +4764,7 @@
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": "2",
+"intAwayScore": "4",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4791,8 +4791,8 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/bhftuv1782983937.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
-"strStatus": "2H",
+"strVideo": "https://www.youtube.com/watch?v=RzhjHsBCffA",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
