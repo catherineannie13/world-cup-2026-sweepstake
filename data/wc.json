@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-07T15:25:18+00:00",
+"updated": "2026-07-07T17:32:28+00:00",
 "count": 96,
 "events": [
 {
@@ -4675,8 +4675,8 @@
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
 "idAwayTeam": "133914",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
-"intScore": null,
-"intScoreVotes": null,
+"intScore": "10",
+"intScoreVotes": "1",
 "strResult": "",
 "idVenue": "16559",
 "strVenue": "Estadio Banorte",
@@ -4811,11 +4811,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Argentina",
 "strAwayTeam": "Egypt",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "16",
-"intAwayScore": null,
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -4843,7 +4843,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "2H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
