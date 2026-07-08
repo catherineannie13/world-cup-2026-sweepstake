@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-08T05:50:03+00:00",
+"updated": "2026-07-08T08:26:03+00:00",
 "count": 96,
 "events": [
 {
@@ -4888,13 +4888,13 @@
 "strCity": "Vancouver, BC",
 "strPoster": "https://www.thesportsdb.com/images/media/event/poster/dmqye01783166775.jpg",
 "strSquare": "",
-"strFanart": null,
+"strFanart": "https://www.thesportsdb.com/images/media/event/fanart/43dyg41783490094.jpg",
 "strThumb": "https://www.thesportsdb.com/images/media/event/thumb/2swkia1783166926.jpg",
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/mh7yoj1783166777.jpg",
 "strMap": null,
 "strTweet1": "",
 "strVideo": "https://www.youtube.com/watch?v=_RAxvAKNc5Y",
-"strStatus": "FT",
+"strStatus": "AP",
 "strPostponed": "no",
 "strLocked": "locked"
 }
