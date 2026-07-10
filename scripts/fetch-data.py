@@ -18,7 +18,7 @@ Resilience:
 - data/wc.json therefore only grows or updates; it never regresses.
 """
 import json, os, sys, time, urllib.request, urllib.error
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 API_KEY   = os.environ.get("TSDB_KEY", "123")
 LEAGUE_ID = "4429"           # FIFA World Cup
@@ -27,10 +27,12 @@ OUT       = os.path.join(os.path.dirname(__file__), "..", "data", "wc.json")
 BASE      = f"https://www.thesportsdb.com/api/v1/json/{API_KEY}"
 
 GROUP_ROUNDS = [1, 2, 3]
-# TheSportsDB codes knockout rounds by TEAMS REMAINING: R32=32, R16=16, QF=8, SF=4.
-# (The Final/3rd place will be 2/1 — those share codes with group matchdays 1/2, which
-#  GROUP_ROUNDS already fetches, so they're captured too.) Empty responses are harmless.
-KO_ROUNDS = [32, 16, 8, 4]
+# TheSportsDB codes KO rounds INCONSISTENTLY (R32=32, R16=16, QF=125, …), so guessing codes is
+# unreliable. These are the ones seen so far; the KO_DAYS date-sweep below is the real safety net —
+# it captures knockout matches whatever their round code, since KO days have very few matches.
+KO_ROUNDS = [32, 16, 8, 4, 125, 150, 160, 170, 180]
+# Sweep the knockout window day-by-day (few matches/day → no per-day result cap issue).
+KO_DAYS = ("2026-07-01", "2026-07-20")
 
 
 def get(url, tries=3):
@@ -94,6 +96,18 @@ def main():
         if n_ret:
             print(f"  round {r}: +{n_new} new ({n_ret} returned)")
         time.sleep(0.5)
+
+    # knockout day-sweep: catches QF/SF/Final/3rd whatever their round code
+    d0 = datetime.strptime(KO_DAYS[0], "%Y-%m-%d").date()
+    d1 = datetime.strptime(KO_DAYS[1], "%Y-%m-%d").date()
+    day = d0
+    while day <= d1:
+        dd = get(f"{BASE}/eventsday.php?d={day.isoformat()}&l={LEAGUE_ID}")
+        n_new = merge(events, dd.get("events")) if dd else 0
+        if n_new:
+            print(f"  {day.isoformat()}: +{n_new} new")
+        day += timedelta(days=1)
+        time.sleep(0.4)
 
     out_events = sorted(events.values(), key=lambda e: (e.get("strTimestamp") or e.get("dateEvent") or ""))
     payload = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),

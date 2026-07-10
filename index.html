@@ -296,11 +296,16 @@ function process(events){
   // KO rounds are coded by TEAMS REMAINING (R32=32, R16=16, QF=8, SF=4, Final=2). We name by
   // code, not match count — a half-published round (e.g. only 1 of 8 R16 ties listed) would be
   // mis-counted otherwise.
-  const KO_NAME={32:"Round of 32",16:"Round of 16",8:"Quarter-final",4:"Semi-final",2:"Final",1:"Final"};
   const STAGE_RANK={"Group":1,"Round of 32":2,"Round of 16":3,"Quarter-final":4,"Semi-final":5,"Final":6,"Champion":7};
   const RANK_NAME={1:"Group",2:"Round of 32",3:"Round of 16",4:"Quarter-final",5:"Semi-final",6:"Final",7:"Champion"};
   const RANK_BONUS={1:0,2:0,3:4,4:10,5:19,6:32,7:52}; // cumulative advancement bonus by furthest round reached
-  const koRank = ev => isKO(ev) ? (STAGE_RANK[KO_NAME[ri(ev)]]||2) : 1;
+  // TheSportsDB codes KO rounds inconsistently (R32=32, R16=16, QF=125, …). Ignore the numbers:
+  // order the knockout rounds BY DATE and name them in sequence R32→R16→QF→SF→Final.
+  const koCodeMin={};
+  events.forEach(ev=>{ if(isKO(ev)){ const c=ri(ev),t=dt(ev); if(koCodeMin[c]===undefined||t<koCodeMin[c]) koCodeMin[c]=t; } });
+  const koCodeRank={};
+  Object.keys(koCodeMin).map(Number).sort((a,b)=> koCodeMin[a]<koCodeMin[b]?-1:1).forEach((c,i)=>{ koCodeRank[c]=2+Math.min(i,4); });
+  const koRank = ev => isKO(ev) ? (koCodeRank[ri(ev)]||2) : 1;
 
   const teamsInKO = new Set();
   events.forEach(ev=>{ if(isKO(ev)){ [resolve(ev.strHomeTeam),resolve(ev.strAwayTeam)].forEach(t=>t&&teamsInKO.add(t)); } });
@@ -323,7 +328,7 @@ function process(events){
       if(!t||!T[t]) return;
       const s=T[t]; s.P++; s.GF+=gf; s.GA+=ga;
       if(gf>ga){ s.W++; s.pts+=3; } else if(gf===ga){ s.D++; s.pts+=1; } else { s.L++; }
-      s.lastResult={gf,ga,opp,round:ko?(KO_NAME[ri(ev)]||"Knockout"):("Group · MD"+ri(ev)),date:ev.dateEvent,won:gf>ga,draw:gf===ga};
+      s.lastResult={gf,ga,opp,round:ko?(RANK_NAME[koRank(ev)]||"Knockout"):("Group · MD"+ri(ev)),date:ev.dateEvent,won:gf>ga,draw:gf===ga};
     });
     if(ko && h && a && T[h] && T[a]){
       if(hs>as){ T[h].reachedRank=Math.max(T[h].reachedRank,rank+1); T[a].eliminated=true; }
