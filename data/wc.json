@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-10T20:49:57+00:00",
+"updated": "2026-07-10T22:01:47+00:00",
 "count": 100,
 "events": [
 {
@@ -4964,7 +4964,7 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Spain",
 "strAwayTeam": "Belgium",
-"intHomeScore": "1",
+"intHomeScore": "2",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "125",
@@ -4996,7 +4996,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "2H",
+"strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
