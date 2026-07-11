@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-11T20:23:20+00:00",
+"updated": "2026-07-11T21:22:51+00:00",
 "count": 101,
 "events": [
 {
@@ -5015,11 +5015,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Norway",
 "strAwayTeam": "England",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "125",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -5047,7 +5047,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
