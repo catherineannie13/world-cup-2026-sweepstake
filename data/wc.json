@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-12T01:05:34+00:00",
+"updated": "2026-07-12T04:52:27+00:00",
 "count": 101,
 "events": [
 {
@@ -5047,7 +5047,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "ET",
+"strStatus": "AET",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
@@ -5066,11 +5066,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "Argentina",
 "strAwayTeam": "Switzerland",
-"intHomeScore": "0",
+"intHomeScore": "3",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "125",
-"intAwayScore": "0",
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -5098,7 +5098,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "AET",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
