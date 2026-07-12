@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-12T09:28:13+00:00",
+"updated": "2026-07-12T10:56:24+00:00",
 "count": 102,
 "events": [
 {
@@ -4995,7 +4995,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/wyvdcx1783410729.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "https://www.youtube.com/watch?v=tZ362IlU5tY",
+"strVideo": "https://www.youtube.com/watch?v=VHoctq0AOg8",
 "strStatus": "FT",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -5046,7 +5046,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/3xgq7c1783322760.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=zUIUW2Z4lj0",
 "strStatus": "AET",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -5097,7 +5097,7 @@
 "strBanner": "https://www.thesportsdb.com/images/media/event/banner/c2pnbl1783490095.jpg",
 "strMap": null,
 "strTweet1": "",
-"strVideo": "",
+"strVideo": "https://www.youtube.com/watch?v=zUIUW2Z4lj0",
 "strStatus": "AET",
 "strPostponed": "no",
 "strLocked": "unlocked"
@@ -5171,7 +5171,7 @@
 "intHomeScore": null,
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
-"intRound": "0",
+"intRound": "150",
 "intAwayScore": null,
 "intSpectators": null,
 "strOfficial": "",
@@ -5192,11 +5192,11 @@
 "strVenue": "Mercedes-Benz Stadium",
 "strCountry": "United States",
 "strCity": "Atlanta, GA",
-"strPoster": "",
+"strPoster": "https://www.thesportsdb.com/images/media/event/poster/prcst71783849835.jpg",
 "strSquare": "",
 "strFanart": null,
-"strThumb": "",
-"strBanner": "",
+"strThumb": "https://www.thesportsdb.com/images/media/event/thumb/njzfqm1783849834.jpg",
+"strBanner": "https://www.thesportsdb.com/images/media/event/banner/g3fq1o1783849836.jpg",
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
