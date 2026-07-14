@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-14T19:18:22+00:00",
+"updated": "2026-07-14T20:37:44+00:00",
 "count": 102,
 "events": [
 {
@@ -5121,7 +5121,7 @@
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "150",
-"intAwayScore": "0",
+"intAwayScore": "1",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -5149,7 +5149,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "1H",
+"strStatus": "HT",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
