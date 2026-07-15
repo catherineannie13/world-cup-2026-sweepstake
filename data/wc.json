@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-15T18:07:08+00:00",
+"updated": "2026-07-15T19:45:36+00:00",
 "count": 102,
 "events": [
 {
@@ -5168,11 +5168,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "England",
 "strAwayTeam": "Argentina",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "150",
-"intAwayScore": null,
+"intAwayScore": "0",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -5200,7 +5200,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 }
