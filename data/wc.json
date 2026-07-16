@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-16T06:43:02+00:00",
+"updated": "2026-07-16T09:12:51+00:00",
 "count": 104,
 "events": [
 {
@@ -5185,8 +5185,8 @@
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
 "idAwayTeam": "134509",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-"intScore": null,
-"intScoreVotes": null,
+"intScore": "7",
+"intScoreVotes": "1",
 "strResult": "",
 "idVenue": "16029",
 "strVenue": "Mercedes-Benz Stadium",
