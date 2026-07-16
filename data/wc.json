@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-16T16:49:06+00:00",
+"updated": "2026-07-16T18:06:22+00:00",
 "count": 104,
 "events": [
 {
@@ -5294,11 +5294,11 @@
 "strVenue": "MetLife Stadium",
 "strCountry": "United States",
 "strCity": "East Rutherford, NJ",
-"strPoster": "",
+"strPoster": "https://www.thesportsdb.com/images/media/event/poster/7uh1701784180545.jpg",
 "strSquare": "",
 "strFanart": null,
-"strThumb": "",
-"strBanner": "",
+"strThumb": "https://www.thesportsdb.com/images/media/event/thumb/hjwduc1784180544.jpg",
+"strBanner": "https://www.thesportsdb.com/images/media/event/banner/1d0rmb1784180546.jpg",
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
