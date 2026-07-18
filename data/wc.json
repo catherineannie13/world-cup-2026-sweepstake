@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-18T13:57:02+00:00",
+"updated": "2026-07-18T14:55:16+00:00",
 "count": 104,
 "events": [
 {
@@ -5281,14 +5281,14 @@
 "dateEvent": "2026-07-19",
 "dateEventLocal": "2026-07-19",
 "strTime": "19:00:00",
-"strTimeLocal": "14:00:00",
+"strTimeLocal": "21:00:00",
 "strGroup": "",
 "idHomeTeam": "133909",
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
 "idAwayTeam": "134509",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-"intScore": null,
-"intScoreVotes": null,
+"intScore": "10",
+"intScoreVotes": "1",
 "strResult": "",
 "idVenue": "15812",
 "strVenue": "MetLife Stadium",
