@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-18T20:13:01+00:00",
+"updated": "2026-07-18T21:23:13+00:00",
 "count": 104,
 "events": [
 {
@@ -5219,11 +5219,11 @@
 "strDescriptionEN": "",
 "strHomeTeam": "France",
 "strAwayTeam": "England",
-"intHomeScore": null,
+"intHomeScore": "0",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
 "intRound": "160",
-"intAwayScore": null,
+"intAwayScore": "2",
 "intSpectators": null,
 "strOfficial": "",
 "strWeather": "",
@@ -5251,7 +5251,7 @@
 "strMap": null,
 "strTweet1": "",
 "strVideo": "",
-"strStatus": "NS",
+"strStatus": "1H",
 "strPostponed": "no",
 "strLocked": "unlocked"
 },
