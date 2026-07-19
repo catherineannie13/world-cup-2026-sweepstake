@@ -1,5 +1,5 @@
 {
-"updated": "2026-07-19T19:41:00+00:00",
+"updated": "2026-07-19T20:45:20+00:00",
 "count": 104,
 "events": [
 {
@@ -34,8 +34,8 @@
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
 "idAwayTeam": "136482",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
-"intScore": null,
-"intScoreVotes": null,
+"intScore": "10",
+"intScoreVotes": "1",
 "strResult": "The 2026 FIFA World Cup ignited in spectacular and chaotic fashion at the Mexico City Stadium as co-hosts Mexico secured a gritty 2-0 victory over South Africa in a highly physical inaugural match. Refusing to let the pressure of the moment derail their plans, El Tri capitalized on a dream start to secure all three points, though the second half descended into a historic disciplinary nightmare with three red cards.\r\n\r\nThe energetic home crowd was sent into absolute raptures just nine minutes into the contest when Julián Quiñones intercepted a loose ball following a defensive giveaway by Sphephelo Sithole and slotted a precise finish through the legs of South African goalkeeper Ronwen Williams. Mexico heavily controlled the opening half, but Bafana Bafana managed to keep the deficit to a single goal heading into the interval thanks to some key interventions from Williams.\r\n\r\nThe second half shifted into pure chaos as referee Wilton Sampaio brandished three red cards, making history as the most undisciplined opening match in tournament history. The physical trouble started in the 49th minute when South Africa's Sithole received a straight red card for a last-man foul on Brian Gutiérrez just outside the penalty area.\r\n\r\nWith a one-man advantage, Mexico doubled their cushion in the 66th minute. Roberto Alvarado delivered a perfectly weighted cross to the back post, allowing veteran forward Raúl Jiménez to nod home a firm header. The goal marked Jiménez's first career World Cup goal, vaulting him into a tie with Jared Borgetti for second place on Mexico's all-time international scoring list.\r\n\r\nThe closing stretches of the match saw tensions boil over completely. South Africa substitute Themba Zwane was sent off in the 83rd minute following a VAR review for striking Alvarado in the face. Mexico's captain, César Montes, was subsequently shown a straight red card in stoppage time for a reckless sliding challenge on Khuliso Mudau to stop a breakaway scoring opportunity.",
 "idVenue": "16559",
 "strVenue": "Estadio Azteca",
