@@ -1,5 +1,5 @@
 {
-"updated": "2026-08-29T22:45:00+00:00",
+"updated": "2026-08-30T01:04:13+00:00",
 "count": 104,
 "events": [
 {
@@ -5273,7 +5273,7 @@
 "intHomeScore": "1",
 "intHomeScoreExtra": null,
 "intAwayScoreExtra": null,
-"intRound": "200",
+"intRound": "0",
 "intAwayScore": "0",
 "intSpectators": "80663",
 "strOfficial": "",
