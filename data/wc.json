@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-13T11:08:06+00:00",
+"updated": "2026-09-13T14:58:53+00:00",
 "count": 104,
 "events": [
 {
@@ -1104,7 +1104,7 @@
 "idHomeTeam": "133914",
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
 "idAwayTeam": "133912",
-"strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
+"strAwayTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/84cfeg1789271106.png",
 "intScore": "8",
 "intScoreVotes": "1",
 "strResult": "",
@@ -2379,7 +2379,7 @@
 "idHomeTeam": "136141",
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
 "idAwayTeam": "133912",
-"strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
+"strAwayTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/84cfeg1789271106.png",
 "intScore": "6",
 "intScoreVotes": "1",
 "strResult": "",
@@ -3397,7 +3397,7 @@
 "strTimeLocal": "18:00:00",
 "strGroup": "L",
 "idHomeTeam": "133912",
-"strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
+"strHomeTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/84cfeg1789271106.png",
 "idAwayTeam": "134513",
 "strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
 "intScore": "7",
@@ -4266,7 +4266,7 @@
 "idHomeTeam": "133908",
 "strHomeTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
 "idAwayTeam": "133912",
-"strAwayTeamBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
+"strAwayTeamBadge": "https://www.thesportsdb.com/images/media/team/badge/84cfeg1789271106.png",
 "intScore": "9",
 "intScoreVotes": "1",
 "strResult": "",
